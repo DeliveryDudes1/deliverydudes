@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
 
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule,
-  MatMenuModule, MatIconModule , MatListModule, MatProgressSpinnerModule} from '@angular/material';
+  MatMenuModule, MatIconModule ,
+   MatListModule, MatProgressSpinnerModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -21,6 +23,18 @@ import { AuthGuard } from './service/auth.guard';
 import { AuthService } from './service/auth.service';
 import { NotificationService } from './service/notification.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+/** Navigation does not include the auth needs to be added */
+
+const routes: Routes = [
+  { path: '', redirectTo:'login',pathMatch:'full',  },
+  { path:'home', component: NavComponent, },
+  { path:'login', component: LoginComponent },
+  { path:'signup', component:RegisterComponent },
+  { path: '**', redirectTo:'login' , }
+];
+
+export class AppRoutingModule {}
 
 @NgModule({
   declarations: [
@@ -41,6 +55,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     MatListModule,
     MatMenuModule,
     AngularFirestoreModule,
+    RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase,),
     AngularFireAuthModule
   ],
