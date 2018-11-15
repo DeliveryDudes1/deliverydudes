@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -51,9 +52,13 @@ export class AppRoutingModule {}
     MatButtonModule,
     MatInputModule,
     MatCardModule,
+    MatIconModule,
+    FormsModule,
     MatFormFieldModule,
     MatListModule,
+    MatProgressSpinnerModule,
     MatMenuModule,
+    ReactiveFormsModule,
     AngularFirestoreModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase,),
