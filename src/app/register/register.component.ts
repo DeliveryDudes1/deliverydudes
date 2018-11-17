@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   description: string;
 
   constructor(
-    //private auth: AuthService
+    private auth: AuthService
   ) {
    
    }
@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    //this.auth.signup(this.email, this.pwd,this.name);
+    this.auth.signup(this.email, this.pwd,this.name);
     console.log(this.email);
     console.log(this.pwd);
     

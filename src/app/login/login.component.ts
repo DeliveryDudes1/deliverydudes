@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   errorMessage : string;
   form;
-  constructor(private fb: FormBuilder//, private myRoute: Router,private auth: AuthService
+  constructor(private fb: FormBuilder, private myRoute: Router,private auth: AuthService
     ) {
       
     this.form = fb.group({
@@ -25,15 +25,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    /*
+    
     this.auth.doLogin(this.form.value).then(
       res => {
-        this.myRoute.navigate(['product-list']);
+        this.myRoute.navigate(['product-list']); //change that to request list
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
       }
-    )*/
+    )
   }
+
 
 }
