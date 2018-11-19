@@ -37,6 +37,7 @@ const routes: Routes = [
   { path:'home', component: NavComponent, },
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
+  
   { path: '**', redirectTo:'login' , }
 ];
 
