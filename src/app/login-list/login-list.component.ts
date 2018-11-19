@@ -28,7 +28,7 @@ export class LoginListComponent implements OnInit {
       this.router.navigate(['customer']); //change that to request list
     }, err => {
       console.log(err);
-      this.errorMessage = err.message;
+      this.errorMessage = err.message; 
     }
   )  
   }

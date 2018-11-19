@@ -1,7 +1,7 @@
 export interface IDelivery{
-    delID : number;
-    driverID :number;
-    custmerID : number;
+    //delID : number;
+    //driverID :number;
+    customerID : number;
     locationFrom: number;
     locationTo: number;
     cargoType: string;

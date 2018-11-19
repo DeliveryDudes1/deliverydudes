@@ -4,8 +4,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import {ICustomer } from '../customer/customer';
 import { CustomerService} from '../shared/customer.service'
 
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -17,7 +15,7 @@ export class RegisterComponent implements OnInit {
   pwd: string;
   name: string;
   phone: string;
-  cid:number;
+  //cid:number;
 
   constructor(private auth: AuthService, private _customerService: CustomerService)
    {}
@@ -29,13 +27,11 @@ export class RegisterComponent implements OnInit {
     this.auth.signup(this.email, this.pwd,this.name);
     console.log(this.email);
     console.log(this.pwd);
-    // add customer to customer collection
+    // add customer to customers collection in fb
     let customer : ICustomer = {
-
       email:this.email,
       name:this.name,
       phone:this.phone,
-      
     };
     this._customerService.addCustomer(customer);
 

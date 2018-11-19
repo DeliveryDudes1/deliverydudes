@@ -40,6 +40,8 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
   { path: 'customer', component: CustomerComponent,canActivate: [AuthGuard]},
+  { path: 'add-delivery', component:AddDeliveryComponent},
+  { path: 'delivery-list', component:DeliveryListComponent},
   { path: '**', redirectTo:'login' , }
 ];
 
