@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-list',
@@ -7,45 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginListComponent implements OnInit {
 
-  constructor() { }
+  errorMessage : string;
 
   ngOnInit() {
   }
 
-  /*error: any;
-    constructor(public af: AngularFire,private router: Router) {
+  error: any;
 
-      this.af.auth.subscribe(auth => { 
-      if(auth) {
-        this.router.navigateByUrl('/members');
-      }
-    });
+  constructor(public af: AuthService,private router: Router) {
+
+    
   }
 
+
   loginFb() {
-    this.af.auth.login({
-      provider: AuthProviders.Facebook,
-      method: AuthMethods.Popup,
-    }).then(
-        (success) => {
-        this.router.navigate(['/members']);
-      }).catch(
-        (err) => {
-        this.error = err;
-      })
+   this.af.doFacebookLogin().then(
+    res => {
+      this.router.navigate(['customer']); //change that to request list
+    }, err => {
+      console.log(err);
+      this.errorMessage = err.message;
+    }
+  )  
   }
 
   loginGoogle() {
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    }).then(
-        (success) => {
-        this.router.navigate(['/members']);
-      }).catch(
-        (err) => {
-        this.error = err;
-      })
-  } */
+    this.af.doGoogleLogin().then(
+      res => {
+        this.router.navigate(['customer']); //change that to request list
+      }, err => {
+        console.log(err);
+        this.errorMessage = err.message;
+      }
+    )  
+   
+  } 
+
+  
 
 }

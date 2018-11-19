@@ -89,4 +89,33 @@ export class AuthService {
   isLoggedIn():boolean {
       return this.loggedInStatus;
   }
+
+  doGoogleLogin(){
+    return new Promise<any>((resolve, reject) => {
+      let provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      this._firebaseAuth.auth
+      .signInWithPopup(provider)
+      .then(res => {
+        resolve(res);
+        this.loggedInStatus = true;
+      })
+    })
+  }
+
+  doFacebookLogin(){
+    return new Promise<any>((resolve, reject) => {
+      let provider = new firebase.auth.FacebookAuthProvider();
+      this._firebaseAuth.auth
+      .signInWithPopup(provider)
+      .then(res => {
+        resolve(res);
+        this.loggedInStatus = true;
+      }, err => {
+        console.log(err);
+        reject(err);
+      })
+    })
+ }
 }

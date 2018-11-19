@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationsComponent } from './notifications/notifications.component';
 
 import { AngularFirestoreModule} from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule, } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
@@ -32,14 +32,14 @@ import { LoginListComponent } from './login-list/login-list.component';
 import { AddDeliveryComponent } from './add-delivery/add-delivery.component'
 
 
-/** Navigation does not include the auth needs to be added */
+/** Navigation does include the auth without authGaurd */
 
 const routes: Routes = [
   { path: '', redirectTo:'login',pathMatch:'full',  },
   { path:'home', component: NavComponent, },
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
-  
+  { path: 'customer', component: CustomerComponent,canActivate: [AuthGuard]},
   { path: '**', redirectTo:'login' , }
 ];
 

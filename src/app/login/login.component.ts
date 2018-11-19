@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     
     this.auth.doLogin(this.form.value).then(
       res => {
-        this.myRoute.navigate(['product-list']); //change that to request list
+        this.myRoute.navigate(['customer']); //change that to request list
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
