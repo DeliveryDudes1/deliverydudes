@@ -26,7 +26,8 @@ import { NotificationService } from './service/notification.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CustomerComponent } from './customer/customer.component';
 import {DeliveryListComponent} from './delivery-list/delivery-list.component';
-import { LoginListComponent } from './login-list/login-list.component'
+import { LoginListComponent } from './login-list/login-list.component';
+import { AddDeliveryComponent } from './add-delivery/add-delivery.component'
 
 
 /** Navigation does not include the auth needs to be added */
@@ -51,6 +52,7 @@ export class AppRoutingModule {}
     CustomerComponent,
     DeliveryListComponent,
     LoginListComponent,
+    AddDeliveryComponent,
   
   ],
   imports: [
