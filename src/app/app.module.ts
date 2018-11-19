@@ -39,7 +39,8 @@ const routes: Routes = [
   { path:'home', component: NavComponent, },
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
-  
+  { path: 'add-delivery', component:AddDeliveryComponent},
+  { path: 'delivery-list', component:DeliveryListComponent},
   { path: '**', redirectTo:'login' , }
 ];
 

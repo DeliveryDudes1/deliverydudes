@@ -9,7 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  title: string ="Toms Products";
+  title: string ="";
 
   isLoggedIn: boolean;
 
