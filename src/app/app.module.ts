@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule,
   MatMenuModule, MatIconModule ,
@@ -57,6 +59,8 @@ export class AppRoutingModule {}
   
   ],
   imports: [
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
     MatToolbarModule,
     BrowserAnimationsModule,
