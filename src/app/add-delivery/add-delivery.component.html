@@ -1,3 +1,33 @@
-<p>
-  add-delivery works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h4>Make a Request</h4>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input [(ngModel)]="locationFrom" name="locationFrom" matInput placeholder="locationFrom" type="locationFrom">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [(ngModel)]="locationTo" name="locationTo" matInput placeholder="locationTo" type="locationTo" >
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [(ngModel)]="cargoType" name="cargoType" matInput placeholder="cargoType" type="cargoType">
+      </mat-form-field>
+      <br>
+      <mat-form-field >
+        <input [(ngModel)]="costOfDelivery" name="costOfDelivery" matInput placeholder="costOfDelivery" type="costOfDelivery">
+      </mat-form-field>
+      <br>
+      <mat-form-field >
+        <input [(ngModel)]="description" name="description" matInput placeholder="description" type="description">
+      </mat-form-field>
+      
+      <br>
+      <button (click)="makeRequest()" mat-raised-button color="primary">Make Request</button>
+    </form>
+  </mat-card-content>
+</mat-card>

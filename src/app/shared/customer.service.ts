@@ -18,12 +18,13 @@ export class CustomerService {
 
   constructor(private _http:HttpClient,  private _afs: AngularFirestore ) { 
     this.CustomersCollection = _afs.collection<ICustomer>("customers");
-    this.RequestCollection = _afs.collection<IDelivery>("deliveries")
-    
+    this.RequestCollection = _afs.collection<IDelivery>("deliveries");
   }
+
   addCustomer(customer: ICustomer) {
     this.CustomersCollection.add(customer);
   }
+  
   addDelivery( delivery:IDelivery){
     this.RequestCollection.add(delivery);
   }

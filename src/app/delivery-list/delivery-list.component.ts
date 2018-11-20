@@ -8,7 +8,7 @@ import {IDelivery} from './delivery'
 export class DeliveryListComponent implements OnInit {
 
   constructor() { }
-
+///================== quearue both collection customer and requests to get the data
   ngOnInit() {
   }
 
