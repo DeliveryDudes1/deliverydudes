@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IDelivery} from '../delivery-list/delivery';
 import { CustomerService} from '../shared/customer.service';
+import { GmapsdistanceService } from '../shared/gmapsdistance.service';
+import { IDistanceMatrix } from '../IDistance';
+
 
 @Component({
   selector: 'app-add-delivery',
@@ -32,7 +35,11 @@ export class AddDeliveryComponent implements OnInit {
 
   isclicked: boolean = false;
 
-  constructor( private _deliveryService: CustomerService) { }
+  distanceData: IDistanceMatrix;
+
+  spacer: string = ",%20";
+
+  constructor( private _deliveryService: CustomerService,private _distanceMatric : GmapsdistanceService) { }
 
   ngOnInit() {
     this.getUserLocation();
@@ -68,19 +75,30 @@ export class AddDeliveryComponent implements OnInit {
      this.isclicked = true;
      console.log(this.clickLng);
     
-     /*this.destinationLonLat = this.clickLat.toString()+this.clickLng.toString();
+     this.destinationLonLat = this.clickLat.toString()+this.spacer+this.clickLng.toString();
  
-     this.originLonLat = this.lat.toString()+this.lng.toString();
+     this.originLonLat = this.lat.toString()+this.spacer+this.lng.toString();
      this._distanceMatric.getImageList(this.originLonLat,this.destinationLonLat).subscribe(data => {
-       this.distanceData = data
+       this.distanceData = data,
+       console.log(data)
      });
  
-     this.getDistance();*/
+     this.getDistance();
  
    }
  
-    /*getDistance(){
-      this.distance = this.distanceData.rows[0].elements[0].distance.value;
-    }*/
+    getDistance(){
+      this.locationFrom = "";
+      this.locationTo = "";
+      
+      this.distanceData.destination_addresses.forEach(element => {
+        this.locationTo += element + " ";
+      });
+      this.distanceData.origin_addresses.forEach(element => {
+        this.locationFrom += element + " ";
+      });
+      console.log(this.locationFrom, this.locationTo);
+      //this.distance = this.distanceData.rows[0].elements[0].distance.value;
+    }
 
 }

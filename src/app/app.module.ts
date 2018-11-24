@@ -28,7 +28,6 @@ import { NotificationService } from './service/notification.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CustomerComponent } from './customer/customer.component';
 import {DeliveryListComponent} from './delivery-list/delivery-list.component';
-import { LoginListComponent } from './login-list/login-list.component';
 import { AddDeliveryComponent } from './add-delivery/add-delivery.component';
 import { AgmCoreModule } from '@agm/core';
 
@@ -56,7 +55,6 @@ export class AppRoutingModule {}
     NotificationsComponent,
     CustomerComponent,
     DeliveryListComponent,
-    LoginListComponent,
     AddDeliveryComponent,
   
   ],
