@@ -1,11 +1,18 @@
 <mat-toolbar color="primary">
   
   <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" > Delivery Dudes </button>
+<<<<<<< HEAD
   <button mat-button routerLinkActive="active" routerLink="/delivery-list"> My Deliveries </button>
   <button mat-button routerLinkActive="active"  routerLink="/add-delivery"> Request Delivery </button>
+=======
+  <button mat-button routerLinkActive="active" routerLink="delivery-list"> My Deliveries </button>
+  <button mat-button routerLinkActive="active"  routerLink="add-delivery"> Request Delivery </button>
+  <button mat-button routerLinkActive="active"  *ngIf="userLoggedIn()" routerLink="customer"> customer </button>
+  <button>{{isLoggedIn}}</button>
+>>>>>>> c77000fb512f418e7a70ef8739c55b9db99fba03
 
   <span style="flex:1 1 auto"></span>
-  <button mat-button  routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+  <button mat-button  routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="login">Login</button>
   <button mat-button  routerLinkActive="active" *ngIf="isLoggedIn" (click)=onLogout()>Logout</button>
   <button mat-button  routerLinkActive="active" routerLink="/signup">Register</button>
 </mat-toolbar>

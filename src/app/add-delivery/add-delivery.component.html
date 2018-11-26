@@ -1,3 +1,27 @@
+    <!--Google maps, cant put maps inside form
+    Considering to make a maps component because this doesnt look too good-->
+    <div *ngIf="lat && lng">
+        <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onClick($event)">    
+          <agm-marker [latitude]="lat" [longitude]="lng">   
+            <agm-info-window>
+              <h3><strong>Howdy!</strong></h3>
+              <p>You are here!
+                {{ lat }}
+                {{ lng }}
+              </p>
+            </agm-info-window>     
+          </agm-marker>      
+          <agm-marker [latitude]="clickLat" [longitude]="clickLng" *ngIf="isclicked">
+            <agm-info-window>
+              <h3><strong>Howdy!</strong></h3>
+              <p>You clicked here
+                {{ clickLat }}
+                {{ clickLng }}
+              </p>
+            </agm-info-window>      
+          </agm-marker>    
+        </agm-map>      
+      <div>
 <mat-card>
   <mat-card-header>
     <mat-card-title>
@@ -7,11 +31,11 @@
   <mat-card-content>
     <form>
       <mat-form-field>
-        <input [(ngModel)]="locationFrom" name="locationFrom" matInput placeholder="locationFrom" type="locationFrom">
+        <input [(ngModel)]="locationFrom" name="locationFrom" matInput placeholder="locationFrom" type="locationFrom" readonly>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input [(ngModel)]="locationTo" name="locationTo" matInput placeholder="locationTo" type="locationTo" >
+        <input [(ngModel)]="locationTo" name="locationTo" matInput placeholder="locationTo" type="locationTo" readonly>
       </mat-form-field>
       <br>
       <mat-form-field>
@@ -19,7 +43,7 @@
       </mat-form-field>
       <br>
       <mat-form-field >
-        <input [(ngModel)]="costOfDelivery" name="costOfDelivery" matInput placeholder="costOfDelivery" type="costOfDelivery">
+        <input [(ngModel)]="costOfDelivery" name="costOfDelivery" matInput placeholder="costOfDelivery" type="costOfDelivery" readonly>
       </mat-form-field>
       <br>
       <mat-form-field >

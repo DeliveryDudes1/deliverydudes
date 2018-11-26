@@ -3,6 +3,7 @@ import { AuthService } from '../service/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import {ICustomer } from '../customer/customer';
 import { CustomerService} from '../shared/customer.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   phone: string;
   //cid:number;
 
-  constructor(private auth: AuthService, private _customerService: CustomerService)
+  constructor(private auth: AuthService, private _customerService: CustomerService, private routes: Router)
    {}
 
   ngOnInit() {
@@ -33,7 +34,9 @@ export class RegisterComponent implements OnInit {
       name:this.name,
       phone:this.phone,
     };
-    this._customerService.addCustomer(customer);
+    this._customerService.addCustomer(customer)
+
+    this.routes.navigate(['customer']); //change that to request list;
 
   }
 

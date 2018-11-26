@@ -28,15 +28,14 @@ import { NotificationService } from './service/notification.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CustomerComponent } from './customer/customer.component';
 import {DeliveryListComponent} from './delivery-list/delivery-list.component';
-import { LoginListComponent } from './login-list/login-list.component';
-import { AddDeliveryComponent } from './add-delivery/add-delivery.component'
+import { AddDeliveryComponent } from './add-delivery/add-delivery.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 /** Navigation does include the auth without authGaurd */
 
 const routes: Routes = [
   { path: '', redirectTo:'login',pathMatch:'full',  },
-  { path:'home', component: NavComponent, },
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
   { path: 'customer', component: CustomerComponent,canActivate: [AuthGuard]},
@@ -56,7 +55,6 @@ export class AppRoutingModule {}
     NotificationsComponent,
     CustomerComponent,
     DeliveryListComponent,
-    LoginListComponent,
     AddDeliveryComponent,
   
   ],
@@ -79,6 +77,7 @@ export class AppRoutingModule {}
     AngularFirestoreModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase,),
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyBUp3Y-GD97Imt6axIjoY9zNz_M-bTObLA' }),
     AngularFireAuthModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},AuthService, AuthGuard, NotificationService,],
