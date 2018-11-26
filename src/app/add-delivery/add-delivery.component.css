@@ -9,3 +9,6 @@ agm-map {
 
 
   }
+  mat-form-field {
+    width: 80%;
+  }

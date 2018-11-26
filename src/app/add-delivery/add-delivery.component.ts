@@ -16,7 +16,7 @@ export class AddDeliveryComponent implements OnInit {
   locationFrom: string;
   locationTo: string;
   cargoType: string;
-  costOfDelivery: number;
+  costOfDelivery: number = 0;
   description: string;
 
   lat: number;
@@ -97,6 +97,8 @@ export class AddDeliveryComponent implements OnInit {
       this.distanceData.origin_addresses.forEach(element => {
         this.locationFrom += element + " ";
       });
+      this.costOfDelivery = (this.distanceData.rows[0].elements[0].distance.value /1000) * 1.1;
+
       console.log(this.locationFrom, this.locationTo);
       //this.distance = this.distanceData.rows[0].elements[0].distance.value;
     }

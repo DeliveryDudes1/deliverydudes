@@ -28,4 +28,22 @@ export class CustomerService {
   addDelivery( delivery:IDelivery){
     this.RequestCollection.add(delivery);
   }
+
+  /*
+  tableOne.on('value', function (snapshot) {
+    var userId = snapshot.val().userId; // line 1 (results like 1,2,3,4,5,6)
+    anotherTable.child('userdetails').child(userId).once('value', function(mediaSnap) {
+        console.log(userId + ":" + mediaSnap.val().name);
+    });
+});
+
+tableOne.orderByKey().on("value", function (snapshot) {
+    //console.log(snapshot.val());
+    snapshot.forEach(function (data) {
+        tableTwo.once('value').then(function (info) {
+            info = info.val();
+        });
+    });
+});
+   */
 }
