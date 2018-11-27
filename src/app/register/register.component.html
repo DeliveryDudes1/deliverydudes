@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="!isClicked">
   <mat-card-header>
     <mat-card-title>
       <h4>Register New Customer</h4>
@@ -25,5 +25,15 @@
       <br>
       <button (click)="register()" mat-raised-button color="primary">Register</button>
     </form>
+  </mat-card-content>
+</mat-card>
+<mat-card *ngIf="isClicked">
+  <mat-card-header>
+    <mat-card-title>
+      <h4>Yayy!!</h4>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Please check your email to verify your account.</p>
   </mat-card-content>
 </mat-card>

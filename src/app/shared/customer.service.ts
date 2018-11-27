@@ -30,6 +30,15 @@ export class CustomerService {
   }
 
   /*
+  getCustomerData(){
+    tableOne.on('value', function (snapshot) {
+      var userId = snapshot.val().userId; // line 1 (results like 1,2,3,4,5,6)
+      anotherTable.child('userdetails').child(userId).once('value', function(mediaSnap) {
+          console.log(userId + ":" + mediaSnap.val().name);
+      });
+  });
+  }
+  
   tableOne.on('value', function (snapshot) {
     var userId = snapshot.val().userId; // line 1 (results like 1,2,3,4,5,6)
     anotherTable.child('userdetails').child(userId).once('value', function(mediaSnap) {

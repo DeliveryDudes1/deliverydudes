@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   name: string;
   phone: string;
   //cid:number;
+  isClicked: boolean;
 
   constructor(private auth: AuthService, private _customerService: CustomerService, private routes: Router)
    {}
@@ -36,7 +37,9 @@ export class RegisterComponent implements OnInit {
     };
     this._customerService.addCustomer(customer)
 
-    this.routes.navigate(['customer']); //change that to request list;
+    this.isClicked = true;
+    //do one or the other
+    //this.routes.navigate(['customer']); //change that to request list;
 
   }
 
