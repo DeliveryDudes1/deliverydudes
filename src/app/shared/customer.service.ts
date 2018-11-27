@@ -16,6 +16,9 @@ export class CustomerService {
   CustomersCollection: AngularFirestoreCollection<ICustomer>;
   RequestCollection:AngularFirestoreCollection<IDelivery>;
 
+
+  delveries: Observable<IDelivery[]>;
+
   constructor(private _http:HttpClient,  private _afs: AngularFirestore ) { 
     this.CustomersCollection = _afs.collection<ICustomer>("customers");
     this.RequestCollection = _afs.collection<IDelivery>("deliveries");
@@ -27,6 +30,23 @@ export class CustomerService {
   
   addDelivery( delivery:IDelivery){
     this.RequestCollection.add(delivery);
+  }
+
+  getProducts(): Observable<IDelivery[]> {
+    
+
+
+     this.delveries = this.RequestCollection.snapshotChanges().pipe(
+       map(actions => actions.map(a => {
+         const data = a.payload.doc.data() as IDelivery;
+         console.log("GetProducts : data " + JSON.stringify(data));
+         const id = a.payload.doc.id;
+         console.log("getProducts.id = "+id );
+         return { id, ...data };
+       }))
+     );
+     return this.delveries;
+     
   }
 
   /*
