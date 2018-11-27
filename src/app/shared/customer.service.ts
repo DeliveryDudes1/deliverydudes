@@ -21,7 +21,8 @@ export class CustomerService {
 
   constructor(private _http:HttpClient,  private _afs: AngularFirestore ) { 
     this.CustomersCollection = _afs.collection<ICustomer>("customers");
-    this.RequestCollection = _afs.collection<IDelivery>("deliveries");
+    this.RequestCollection = _afs.collection<IDelivery>("deliveries", ref => ref.where('cargoType', '==', 'books'));
+    //can query by where clause!
   }
 
   addCustomer(customer: ICustomer) {
@@ -58,13 +59,6 @@ export class CustomerService {
       });
   });
   }
-  
-  tableOne.on('value', function (snapshot) {
-    var userId = snapshot.val().userId; // line 1 (results like 1,2,3,4,5,6)
-    anotherTable.child('userdetails').child(userId).once('value', function(mediaSnap) {
-        console.log(userId + ":" + mediaSnap.val().name);
-    });
-});
 
 tableOne.orderByKey().on("value", function (snapshot) {
     //console.log(snapshot.val());
