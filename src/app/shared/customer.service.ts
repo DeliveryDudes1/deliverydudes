@@ -35,8 +35,6 @@ export class CustomerService {
 
   getProducts(): Observable<IDelivery[]> {
     
-
-
      this.delveries = this.RequestCollection.snapshotChanges().pipe(
        map(actions => actions.map(a => {
          const data = a.payload.doc.data() as IDelivery;
