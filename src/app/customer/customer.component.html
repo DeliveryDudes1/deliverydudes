@@ -1,83 +1,45 @@
-<div class="side-bar"> 
-                
-  <!-- Professional Details -->
-  <h5 class="tittle">Professional Details</h5>
-  <img src="images/avatar.jpg" class="img-responsive" alt="">
-  <ul class="personal-info">
-    <li>
-      <p> <span> Name</span> John Doe </p>
-    </li>
-    <li>
-      <p> <span> Age</span> 38 Years </p>
-    </li>
-    <li>
-      <p> <span> Location</span> Rome, Italy </p>
-    </li>
-    <li>
-      <p> <span> Experience</span> 15 Years </p>
-    </li>
-    <li>
-      <p> <span> Degree</span> MBA </p>
-    </li>
-    <li>
-      <p> <span> Career Level</span> Mid-Level </p>
-    </li>
-    <li>
-      <p> <span> Phone</span> (800) 123-4567 </p>
-    </li>
-    <li>
-      <p> <span> FAX</span> (800) 123-4568 </p>
-    </li>
-    <li>
-      <p> <span> E-mail</span> <a href="#."> example@example.com</a> </p>
-    </li>
-    <li>
-      <p> <span> Website</span><a href="#."> example.com </a></p>
-    </li>
-  </ul>
-  
-  <!-- Attachments -->
-  <h5 class="tittle">Attachments</h5>
-  <div class="attach bor-btm padding-25">
-    <ul>
-      <li>
-        <p><img src="images/pdf-icon.jpg" alt=""> Curriculum-Vitae.pdf <a href="#."><i class="fa fa-cloud-download"></i></a> <a href="#."><i class="fa fa-eye"></i></a></p>
-      </li>
-      <li>
-        <p><img src="images/word-icon.jpg" alt=""> COE.docx <a href="#."><i class="fa fa-cloud-download"></i></a> <a href="#."><i class="fa fa-eye"></i></a></p>
-      </li>
-    </ul>
-  </div>
 
-  
-  <!-- Contact Me -->
-  <h5 class="tittle">Contact Me</h5>
-  <div class="contact padding-25"> 
-    <!-- Success Msg -->
-    <div id="contact_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>
+<header class="site-header"></header>
+<div class="cover-photo"></div>
+<div class="body">
+  <section class="left-col user-info">
+    <div class="profile-avatar">
+      <div class="inner"></div>
+    </div>
+    <h1>{{ customers[0].name }}</h1>
+    <h2>Customer</h2>
+    <div class="meta">
+      <p><i class="fa fa-fw fa-map-marker"></i> Ireland</p>
+      <p><i class="far fa-envelope"></i> {{ customers[0].email }}</p>
+      <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
+    </div>
+  </section>
+  <section class="section center-col content">
     
-    <!-- FORM -->
-    <form role="form" id="contact_form" class="contact-form" method="post" onsubmit="return false">
-      <ul class="row">
-        <li class="col-sm-12">
-          <label>
-            <input type="text" class="form-control" name="email" id="email" placeholder="Email">
-          </label>
-        </li>
-        <li class="col-sm-12">
-          <label>
-            <input type="text" class="form-control" name="company" id="company" placeholder="Subject">
-          </label>
-        </li>
-        <li class="col-sm-12">
-          <label>
-            <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message"></textarea>
-          </label>
-        </li>
-        <li class="col-sm-12">
-          <button type="submit" value="submit" id="btn_submit" onclick="proceed();">Send Message</button>
-        </li>
+    <!-- Nav -->
+    <nav class="profile-nav">
+      <ul>
+        <li class="active">Activity</li>
+        <li>Looks</li>
+        <li>Hyped</li>
+        <li>Loved</li>
       </ul>
-    </form>
-  </div>
+    </nav>
+    
+    <!-- Wil hyped X-->
+    <div class="unit user-hyped">
+      <h3>Some text here</h3>
+      <p class="time">12 hours ago</p>
+      <ul class="image-grid col-3">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>   
+  </section>
+  <section class="right-col">   
+  </section>
 </div>
