@@ -1,3 +1,24 @@
-<p>
-  delivery-list works!
-</p>
+<div class='card'>
+  <div class='card-body'>
+      <div class='table-responsive'>
+          <table class='table' *ngIf='deliveries && deliveries.length'>
+              <thead>
+                  <tr>             
+                      <th>locationFrom</th>
+                      <th>locationTo</th>
+                      <th>description</th>
+                      <th>Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor='let product of deliveries'>
+                      <td>{{ product.locationFrom }}</td>
+                      <td>{{ product.locationTo}}</td>
+                      <td>{{ product.description }}</td>
+                      <td>{{ product.costOfDelivery | currency: 'EUR':'symbol':'1.2-2' }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
