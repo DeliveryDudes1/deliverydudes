@@ -1,6 +1,6 @@
     <!--Google maps, cant put maps inside form
     Considering to make a maps component because this doesnt look too good-->
-    <div *ngIf="lat && lng">
+    <div *ngIf="lat && lng" id="maps">
         <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onClick($event)">    
           <agm-marker [latitude]="lat" [longitude]="lng">   
             <agm-info-window>
