@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomer } from './customer';
+import { CustomerService } from '../shared/customer.service';
 
 @Component({
   selector: 'app-customer',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  customers: ICustomer[];
+  errorMessage: string;
 
+  constructor( private _deliveriesService: CustomerService) { }
+///================== quearue both collection customer and requests to get the data
   ngOnInit() {
+
+      this._deliveriesService.getCustomers().subscribe(customers => {
+        this.customers = customers;
+        
+    },
+    error => this.errorMessage = <any>error);
   }
+
 
 }

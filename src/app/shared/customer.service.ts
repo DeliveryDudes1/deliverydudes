@@ -19,8 +19,10 @@ export class CustomerService {
 
   delveries: Observable<IDelivery[]>;
 
+  customers: Observable<ICustomer[]>;
+
   constructor(private _http:HttpClient,  private _afs: AngularFirestore ) { 
-    this.CustomersCollection = _afs.collection<ICustomer>("customers");
+    this.CustomersCollection = _afs.collection<ICustomer>("customers",ref => ref.where('email', '==', 'arif.matin@mail.itsligo.ie'));
     this.RequestCollection = _afs.collection<IDelivery>("deliveries", ref => ref.where('cargoType', '==', 'books'));
     //can query by where clause!
   }
@@ -35,8 +37,6 @@ export class CustomerService {
 
   getProducts(): Observable<IDelivery[]> {
     
-
-
      this.delveries = this.RequestCollection.snapshotChanges().pipe(
        map(actions => actions.map(a => {
          const data = a.payload.doc.data() as IDelivery;
@@ -49,6 +49,20 @@ export class CustomerService {
      return this.delveries;
      
   }
+
+  getCustomers(): Observable<ICustomer[]> {
+    
+    this.customers = this.CustomersCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as ICustomer;
+        console.log("GetProducts : data " + JSON.stringify(data));
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+    return this.customers;
+    
+ }
 
   /*
   getCustomerData(){
