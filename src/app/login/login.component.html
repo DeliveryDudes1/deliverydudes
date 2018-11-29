@@ -1,4 +1,5 @@
 <mat-card>
+<mat-card id="matcard">
   <mat-card-content>
     <form class="my-form" [formGroup]="form" (ngSubmit)="login()">
       <mat-form-field class="full-width">
@@ -14,8 +15,9 @@
   <mat-card-actions>
     <button mat-raised-button (click)="login()" color="primary">Login</button>
   </mat-card-actions>
-  <button mat-raised-button  color="primary" (click)="loginGoogle()">Login with Google</button>
-  <button mat-raised-button  color="primary" (click)="loginFb()">Login with Facebook</button>
+  <button class="btn-danger" color="primary" (click)="loginGoogle()">Login with Google</button>
+  <button class="btn-primary"  color="primary" (click)="loginFb()">Login with Facebook</button>
+</mat-card>
 </mat-card>
 
 

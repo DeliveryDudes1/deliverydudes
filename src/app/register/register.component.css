@@ -1,0 +1,19 @@
+#matcard{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5%;
+    background: white;
+}
+
+mat-card{
+    background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    padding:10px;
+
+}

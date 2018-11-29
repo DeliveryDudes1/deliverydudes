@@ -6,7 +6,7 @@ agm-map {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
+  float: right;
 }
 mat-form-field {
   width: 100%;
