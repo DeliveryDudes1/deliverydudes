@@ -3,6 +3,7 @@ import { IDelivery} from '../delivery-list/delivery';
 import { CustomerService} from '../shared/customer.service';
 import { GmapsdistanceService } from '../shared/gmapsdistance.service';
 import { IDistanceMatrix } from '../IDistance';
+import { IDriver } from '../driver';
 
 
 @Component({
@@ -38,6 +39,12 @@ export class AddDeliveryComponent implements OnInit {
   distanceData: IDistanceMatrix;
 
   spacer: string = ",%20";
+
+  dudes: IDriver[] = [
+    { driverName:'Johnny', driverEmail:'jonny@email', driverMobile:'08622334'},
+    { driverName:'Tony', driverEmail:'jonny@email', driverMobile:'08622334'},
+    { driverName:'Boby', driverEmail:'jonny@email', driverMobile:'08622334'},
+  ];
 
   constructor( private _deliveryService: CustomerService,private _distanceMatric : GmapsdistanceService) { }
 
@@ -102,5 +109,7 @@ export class AddDeliveryComponent implements OnInit {
       console.log(this.locationFrom, this.locationTo);
       //this.distance = this.distanceData.rows[0].elements[0].distance.value;
     }
+
+
 
 }
