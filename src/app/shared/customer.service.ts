@@ -55,7 +55,7 @@ export class CustomerService {
     this.customers = this.CustomersCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as ICustomer;
-        console.log("GetProducts : data " + JSON.stringify(data));
+        console.log("GetCustomers : data " + JSON.stringify(data));
         const id = a.payload.doc.id;
         return { id, ...data };
       }))

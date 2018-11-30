@@ -10,9 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
-import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule,
-  MatMenuModule, MatIconModule ,
-   MatListModule, MatProgressSpinnerModule} from '@angular/material';
+import {  MatButtonModule, MatCardModule, MatFormFieldModule,MatFormFieldControl, MatInputModule,
+          MatMenuModule, MatIconModule , MatSelectModule,
+          MatListModule, MatProgressSpinnerModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -69,8 +69,10 @@ export class AppRoutingModule {}
     MatCardModule,
     MatIconModule,
     FormsModule,
-    
-    
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    //MatFormFieldControl,
     MatFormFieldModule,
     MatListModule,
     MatProgressSpinnerModule,

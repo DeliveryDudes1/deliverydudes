@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IDelivery} from '../delivery-list/delivery';
 import { CustomerService} from '../shared/customer.service';
+import { DriverService} from '../shared/driver.service';
 import { GmapsdistanceService } from '../shared/gmapsdistance.service';
 import { IDistanceMatrix } from '../IDistance';
 import { IDriver } from '../driver';
@@ -41,19 +42,25 @@ export class AddDeliveryComponent implements OnInit {
   spacer: string = ",%20";
 
   dudes: IDriver[] = [
-    { driverName:'Johnny', driverEmail:'jonny@email', driverMobile:'08622334'},
-    { driverName:'Tony', driverEmail:'jonny@email', driverMobile:'08622334'},
-    { driverName:'Boby', driverEmail:'jonny@email', driverMobile:'08622334'},
+    { driverName:'hard coded Johnny', driverEmail:'jonny@email', driverMobile:'08622334'},
+   { driverName:'hard coded Tony', driverEmail:'jonny@email', driverMobile:'08622334'},
+   { driverName:'hard coded Boby', driverEmail:'jonny@email', driverMobile:'08622334'},
   ];
-
-  constructor( private _deliveryService: CustomerService,private _distanceMatric : GmapsdistanceService) { }
+ 
+  constructor( private _deliveryService: CustomerService,private _distanceMatric : GmapsdistanceService, 
+    private _driverService: DriverService) { }
 
   ngOnInit() {
     this.getUserLocation();
+    // get drivers names on init.== can not read subscribe.
+    ///this._driverService.getDrivers().subscribe(data => {
+    //this.dudes = data,
+      //console.log(data)
+    //});
   }
- //  send request to fb db.
+
+ //  send request to fb db.== to do -- update driver field for delivery field in db.!!!!!!!!!!!!!!
   makeRequest(){
- 
     let request : IDelivery = {    
     locationFrom: this.locationFrom,
     locationTo: this.locationTo,
@@ -109,6 +116,8 @@ export class AddDeliveryComponent implements OnInit {
       console.log(this.locationFrom, this.locationTo);
       //this.distance = this.distanceData.rows[0].elements[0].distance.value;
     }
+
+    
 
 
 
