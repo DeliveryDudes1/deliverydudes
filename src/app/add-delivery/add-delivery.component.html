@@ -1,5 +1,6 @@
     <!--Google maps, cant put maps inside form
     Considering to make a maps component because this doesnt look too good-->
+    <div class="container">
     <div *ngIf="lat && lng">
         <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onClick($event)">    
           <agm-marker [latitude]="lat" [longitude]="lng">   
@@ -62,3 +63,4 @@
     </form>
   </mat-card-content>
 </mat-card>
+</div>

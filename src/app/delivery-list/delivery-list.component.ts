@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IDelivery} from './delivery'
 import { CustomerService } from '../shared/customer.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-delivery-list',
   templateUrl: './delivery-list.component.html',
@@ -12,7 +13,7 @@ export class DeliveryListComponent implements OnInit {
   filterDeliveries: IDelivery[];
   errorMessage: string;
 
-  constructor( private _deliveriesService: CustomerService) { }
+  constructor( private _deliveriesService: CustomerService,private myRoute: Router) { }
 ///================== quearue both collection customer and requests to get the data
   ngOnInit() {
 
@@ -22,5 +23,9 @@ export class DeliveryListComponent implements OnInit {
     },
     error => this.errorMessage = <any>error);
 
+  }
+  showDivertComponent()
+  {
+    this.myRoute.navigate(["driver"]);
   }
 }

@@ -8,6 +8,7 @@
                       <th>locationTo</th>
                       <th>description</th>
                       <th>Price</th>
+                      <th>Driver</th>
                   </tr>
               </thead>
               <tbody>
@@ -16,6 +17,10 @@
                       <td>{{ product.locationTo}}</td>
                       <td>{{ product.description }}</td>
                       <td>{{ product.costOfDelivery | currency: 'EUR':'symbol':'1.2-2' }}</td>
+                      <td><button 
+                            mat-raised-button color="primary"  (click)="showDivertComponent()">See Driver
+                        </button>
+                    </td>
                   </tr>
               </tbody>
           </table>

@@ -30,6 +30,7 @@ import { CustomerComponent } from './customer/customer.component';
 import {DeliveryListComponent} from './delivery-list/delivery-list.component';
 import { AddDeliveryComponent } from './add-delivery/add-delivery.component';
 import { AgmCoreModule } from '@agm/core';
+import { DiverComponent } from './diver/diver.component';
 
 
 /** Navigation does include the auth without authGaurd */
@@ -38,9 +39,10 @@ const routes: Routes = [
   { path: '', redirectTo:'login',pathMatch:'full',  },
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
-  { path: 'customer', component: CustomerComponent,canActivate: [AuthGuard]},
+  { path: 'customer', component: CustomerComponent},
   { path: 'add-delivery', component:AddDeliveryComponent},
   { path: 'delivery-list', component:DeliveryListComponent},
+  { path: 'driver', component: DiverComponent},
   { path: '**', redirectTo:'login' , }
 ];
 
@@ -56,6 +58,7 @@ export class AppRoutingModule {}
     CustomerComponent,
     DeliveryListComponent,
     AddDeliveryComponent,
+    DiverComponent,
   
   ],
   imports: [
