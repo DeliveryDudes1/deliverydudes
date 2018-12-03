@@ -40,12 +40,13 @@ export class AddDeliveryComponent implements OnInit {
   distanceData: IDistanceMatrix;
 
   spacer: string = ",%20";
+  dudes: IDriver[] ;
 
-  dudes: IDriver[] = [
-    { driverName:'hard coded Johnny', driverEmail:'jonny@email', driverMobile:'08622334'},
-   { driverName:'hard coded Tony', driverEmail:'jonny@email', driverMobile:'08622334'},
-   { driverName:'hard coded Boby', driverEmail:'jonny@email', driverMobile:'08622334'},
-  ];
+ /* dudes: IDriver[] = [
+    { driverName:'hard coded Johnny', driverEmail:'jonny@email', driverMobile:'08622334', driverID: 1},
+   { driverName:'hard coded Tony', driverEmail:'jonny@email', driverMobile:'08622334', driverID: 1},
+   { driverName:'hard coded Boby', driverEmail:'jonny@email', driverMobile:'08622334',driverID: 1},
+  ];*/
  
   constructor( private _deliveryService: CustomerService,private _distanceMatric : GmapsdistanceService, 
     private _driverService: DriverService) { }
@@ -53,20 +54,24 @@ export class AddDeliveryComponent implements OnInit {
   ngOnInit() {
     this.getUserLocation();
     // get drivers names on init.== can not read subscribe.
-    ///this._driverService.getDrivers().subscribe(data => {
-    //this.dudes = data,
-      //console.log(data)
-    //});
+    this._driverService.getDrivers().subscribe(data => {
+    this.dudes = data,
+      console.log(data)
+    });
   }
 
  //  send request to fb db.== to do -- update driver field for delivery field in db.!!!!!!!!!!!!!!
+ //all tge
   makeRequest(){
     let request : IDelivery = {    
     locationFrom: this.locationFrom,
     locationTo: this.locationTo,
     cargoType: this.cargoType,
     costOfDelivery:this.costOfDelivery,
-    description: this.description
+    description: this.description,
+    driverID: 1,
+    customerID: 1,
+    ID: 1
   };
   this._deliveryService.addDelivery(request);
   console.log(this.description);

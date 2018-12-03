@@ -9,6 +9,7 @@
                       <th>description</th>
                       <th>Price</th>
                       <th>Driver</th>
+                      <th>Delete</th>
                   </tr>
               </thead>
               <tbody>
@@ -20,7 +21,8 @@
                       <td><button 
                             mat-raised-button color="primary"  (click)="showDivertComponent()">See Driver
                         </button>
-                    </td>
+                        </td>
+                        <td><button id="remove" class="btn" (click)="deleteRequest(product.id)"><i class="fa fa-trash"></i>Trash</button></td>
                   </tr>
               </tbody>
           </table>

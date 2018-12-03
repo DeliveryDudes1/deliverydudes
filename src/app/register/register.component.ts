@@ -30,10 +30,12 @@ export class RegisterComponent implements OnInit {
     console.log(this.email);
     console.log(this.pwd);
     // add customer to customers collection in fb
+    //customer ID hard coded
     let customer : ICustomer = {
       email:this.email,
       name:this.name,
       phone:this.phone,
+      customerID: 1
     };
     this._customerService.addCustomer(customer)
 

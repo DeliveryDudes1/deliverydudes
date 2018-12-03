@@ -28,4 +28,8 @@ export class DeliveryListComponent implements OnInit {
   {
     this.myRoute.navigate(["driver"]);
   }
+
+  deleteRequest(id: string): void{
+    this._deliveriesService.deleteRequest(id);
+}
 }

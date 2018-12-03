@@ -2,3 +2,7 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+
+body{
+    min-width: 500px;
+}

@@ -83,4 +83,12 @@ tableOne.orderByKey().on("value", function (snapshot) {
     });
 });
    */
+
+
+  deleteRequest(id:string): void {
+    this.RequestCollection.doc(id).delete()
+    .catch(error => {console.log("deleteRequest error: "+error)})
+    .then(() => console.log("deleteRequested: id = "+id));
+  }
 }
+
