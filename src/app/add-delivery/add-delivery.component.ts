@@ -91,7 +91,7 @@ export class AddDeliveryComponent implements OnInit {
      console.log(ent);
      this.clickLat = ent.coords.lat;
      this.clickLng = ent.coords.lng;
-     this.isclicked = true;
+     
      console.log(this.clickLng);
     
      this.destinationLonLat = this.clickLat.toString()+this.spacer+this.clickLng.toString();
@@ -120,6 +120,7 @@ export class AddDeliveryComponent implements OnInit {
 
       console.log(this.locationFrom, this.locationTo);
       //this.distance = this.distanceData.rows[0].elements[0].distance.value;
+      this.isclicked = true;
     }
 
     

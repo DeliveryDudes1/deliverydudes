@@ -12,6 +12,7 @@ export class DeliveryListComponent implements OnInit {
   deliveries: IDelivery[];
   filterDeliveries: IDelivery[];
   errorMessage: string;
+  _listFilter: string;
 
   constructor( private _deliveriesService: CustomerService,private myRoute: Router) { }
 ///================== quearue both collection customer and requests to get the data
@@ -31,5 +32,19 @@ export class DeliveryListComponent implements OnInit {
 
   deleteRequest(id: string): void{
     this._deliveriesService.deleteRequest(id);
+}
+get listFilter() : string {
+  return this._listFilter;
+}
+set listFilter(value : string) {
+  console.log(value);
+  this._listFilter = value;
+  this.filterDeliveries = this.listFilter ? this.performFilter(this.listFilter) : this.deliveries;
+}
+
+performFilter(filterBy : string) : IDelivery[]{
+  filterBy = filterBy.toLocaleLowerCase();
+  return this.deliveries.filter((request : IDelivery) =>
+      request.locationFrom.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
 }
