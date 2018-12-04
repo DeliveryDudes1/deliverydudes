@@ -15,8 +15,10 @@
   <mat-card-actions>
     <button mat-raised-button (click)="login()" color="primary">Login</button>
   </mat-card-actions>
-  <button class="btn-danger" color="primary" (click)="loginGoogle()">Login with Google</button>
-  <button class="btn-primary"  color="primary" (click)="loginFb()">Login with Facebook</button>
+  <button mat-raised-button color="primary" (click)="loginGoogle()"
+  matTooltip="Log in with Google" id="google">Google  </button>
+  <button mat-raised-button color="primary" (click)="loginFb()"
+  matTooltip="Log in with Facebook" id="fb">Facebook</button>
 </mat-card>
 </mat-card>
 

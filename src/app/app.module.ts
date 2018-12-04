@@ -12,7 +12,8 @@ import { HttpModule } from '@angular/http';
 
 import {  MatButtonModule, MatCardModule, MatFormFieldModule,MatFormFieldControl, MatInputModule,
           MatMenuModule, MatIconModule , MatSelectModule,
-          MatListModule, MatProgressSpinnerModule} from '@angular/material';
+          MatListModule, MatProgressSpinnerModule, MatTooltipModule,
+          MatSnackBarModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -40,9 +41,9 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
   { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard]},
-  { path: 'add-delivery', component:AddDeliveryComponent},
+  { path: 'add-delivery', component:AddDeliveryComponent,canActivate: [AuthGuard]},
   { path: 'delivery-list', component:DeliveryListComponent,canActivate: [AuthGuard]},
-  { path: 'driver', component: DiverComponent},
+  { path: 'driver', component: DiverComponent ,canActivate: [AuthGuard]},
   { path: '**', redirectTo:'login' , }
 ];
 
@@ -68,6 +69,7 @@ export class AppRoutingModule {}
     MatToolbarModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatInputModule,
     MatCardModule,
     MatIconModule,
@@ -75,6 +77,7 @@ export class AppRoutingModule {}
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatTooltipModule,
     //MatFormFieldControl,
     MatFormFieldModule,
     MatListModule,

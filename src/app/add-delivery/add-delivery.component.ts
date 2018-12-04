@@ -6,6 +6,7 @@ import { GmapsdistanceService } from '../shared/gmapsdistance.service';
 import { IDistanceMatrix } from '../IDistance';
 import { IDriver } from '../driver';
 import { AuthService } from '../service/auth.service';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -39,7 +40,8 @@ export class AddDeliveryComponent implements OnInit {
   constructor( private _deliveryService: CustomerService,
     private _distanceMatric : GmapsdistanceService, 
     private _driverService: DriverService,
-    private _auth: AuthService) { }
+    private _auth: AuthService,
+    public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getUserLocation();
@@ -71,6 +73,7 @@ export class AddDeliveryComponent implements OnInit {
 
   this._deliveryService.addDelivery(request);
   console.log(this.description);
+  this.OpenSnackBar("Delivery request made")
   }
 
   private getUserLocation() {
@@ -120,7 +123,12 @@ export class AddDeliveryComponent implements OnInit {
     }
 
     
-
+    OpenSnackBar(message: string) {
+      //let snackBarRef = snackBar.open('Message archived');
+      this.snackBar.open(message, '', {
+        duration: 2500
+      });
+    }
 
 
 }

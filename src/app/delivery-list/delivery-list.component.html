@@ -1,6 +1,6 @@
 <div class='card'>
   <div class='card-body'>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" id="search">
                 <input type="text" class="form-control" placeholder="Address" aria-label="Filter by:" aria-describedby="basic-addon1"
                   [(ngModel)]="listFilter"/>
             </div>
@@ -27,7 +27,7 @@
                             mat-raised-button color="primary"  (click)="showDivertComponent()">See Driver
                         </button>
                         </td>
-                        <td><button id="remove" class="btn" (click)="deleteRequest(product.id)"><i class="fa fa-trash"></i>Trash</button></td>
+                        <td><button id="remove" class="btn" (click)="deleteRequest(product.id)"><i class="fa fa-trash"></i>Delete</button></td>
                   </tr>
               </tbody>
           </table>

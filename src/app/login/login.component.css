@@ -19,3 +19,11 @@ mat-card{
     padding:10px;
 
 }
+#fb{
+    background-color: blue;
+    margin-left: 5px;
+}
+#google{
+    background-color: red;
+    margin-right: 5px;
+}
