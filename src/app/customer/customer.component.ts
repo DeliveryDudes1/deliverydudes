@@ -18,15 +18,12 @@ export class CustomerComponent implements OnInit {
   constructor( private _deliveriesService: CustomerService, private __auth : AuthService ) { 
   }
 
-///================== quarry  both collection customer and requests to get the data
-
   ngOnInit() {
 
       this.cEmail = this.__auth.getCutomerEmail();
       this._deliveriesService.getCustomers().subscribe(customers => {
-      this.customers = customers.filter(c => c.email == this.cEmail);
-     
-        console.log("customeer email -- ", this.cEmail);
+      this.customers = customers.filter(c => c.email == this.cEmail); // filter customerws by email.
+      console.log("customer email -- ", this.cEmail);
     },
 
     error => this.errorMessage = <any>error);

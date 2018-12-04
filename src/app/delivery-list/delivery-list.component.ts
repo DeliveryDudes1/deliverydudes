@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {IDelivery} from './delivery'
 import { CustomerService } from '../shared/customer.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-delivery-list',
   templateUrl: './delivery-list.component.html',
@@ -13,16 +14,19 @@ export class DeliveryListComponent implements OnInit {
   filterDeliveries: IDelivery[];
   errorMessage: string;
   _listFilter: string;
+  sortingEmail: string;
 
-  constructor( private _deliveriesService: CustomerService,private myRoute: Router) { }
-///================== quearue both collection customer and requests to get the data
+  constructor( private _deliveriesService: CustomerService,private myRoute: Router, private _auth: AuthService) { }
+
   ngOnInit() {
-
+      this.sortingEmail = this._auth.getCutomerEmail();
       this._deliveriesService.getProducts().subscribe(deliveries => {
-        this.deliveries = deliveries
-        this.filterDeliveries = deliveries;
+      this.deliveries = deliveries.filter(d => d.customerEmail == this.sortingEmail),// filter by customer email,
+        //this.filterDeliveries = deliveries;
+        console.log("list email --" , this.sortingEmail)
     },
     error => this.errorMessage = <any>error);
+
   }
 
   showDivertComponent()

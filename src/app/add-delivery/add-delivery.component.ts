@@ -5,6 +5,7 @@ import { DriverService} from '../shared/driver.service';
 import { GmapsdistanceService } from '../shared/gmapsdistance.service';
 import { IDistanceMatrix } from '../IDistance';
 import { IDriver } from '../driver';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -13,59 +14,48 @@ import { IDriver } from '../driver';
   styleUrls: ['./add-delivery.component.css']
 })
 export class AddDeliveryComponent implements OnInit {
-   // ++++++++++++++++++   Location  TYPE IN DATABASE REQUIRES CLARIFICATION >>>>>>>>>>>>>
-  //customerID : number;
+
   locationFrom: string;
   locationTo: string;
   cargoType: string;
   costOfDelivery: number = 0;
   description: string;
-
   lat: number;
   lng: number;
-
   originLonLat: string;
   destinationLonLat: string;
-
   clickLat: number;
   clickLng: number;
-
   markers: any;
   subscription: any;
-
   distance : number;
-
   isclicked: boolean = false;
-
   distanceData: IDistanceMatrix;
 /// +++++++++++++++++  Email sorting +++++++++++++++++++++++
-  customerEmail:string ='marrr@open.ie';
-
+  ADcustEmail:string;
   spacer: string = ",%20";
   dudes: IDriver[] ;
 
- /* dudes: IDriver[] = [
-    { driverName:'hard coded Johnny', driverEmail:'jonny@email', driverMobile:'08622334', driverID: 1},
-   { driverName:'hard coded Tony', driverEmail:'jonny@email', driverMobile:'08622334', driverID: 1},
-   { driverName:'hard coded Boby', driverEmail:'jonny@email', driverMobile:'08622334',driverID: 1},
-  ];*/
- 
   constructor( private _deliveryService: CustomerService,
     private _distanceMatric : GmapsdistanceService, 
-    private _driverService: DriverService) { }
+    private _driverService: DriverService,
+    private _auth: AuthService) { }
 
   ngOnInit() {
     this.getUserLocation();
-    // get drivers names on init.== can not read subscribe.
+    // get drivers names for selection.
     this._driverService.getDrivers().subscribe(data => {
     this.dudes = data,
       console.log(data)
     });
+    
+    this.ADcustEmail = this._auth.getCutomerEmail();// get this customer email;
+    console.log("make delivery cust email -- " ,this.ADcustEmail);
   }
+ //  send request to fb db.
 
- //  send request to fb db.== to do -- update driver field for delivery field in db.!!!!!!!!!!!!!!
- //all tge
   makeRequest(){
+ 
     let request : IDelivery = {    
     locationFrom: this.locationFrom,
     locationTo: this.locationTo,
@@ -75,9 +65,10 @@ export class AddDeliveryComponent implements OnInit {
     driverID: 1,
     customerID: 1,
     ID: 1,
-    customerEmail: this.customerEmail
-  
+    customerEmail: this.ADcustEmail // send to Firabase.
+
   };
+
   this._deliveryService.addDelivery(request);
   console.log(this.description);
   }
