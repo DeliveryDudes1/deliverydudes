@@ -38,6 +38,8 @@ export class AddDeliveryComponent implements OnInit {
   isclicked: boolean = false;
 
   distanceData: IDistanceMatrix;
+/// +++++++++++++++++  Email sorting +++++++++++++++++++++++
+  customerEmail:string ='marrr@open.ie';
 
   spacer: string = ",%20";
   dudes: IDriver[] ;
@@ -48,7 +50,8 @@ export class AddDeliveryComponent implements OnInit {
    { driverName:'hard coded Boby', driverEmail:'jonny@email', driverMobile:'08622334',driverID: 1},
   ];*/
  
-  constructor( private _deliveryService: CustomerService,private _distanceMatric : GmapsdistanceService, 
+  constructor( private _deliveryService: CustomerService,
+    private _distanceMatric : GmapsdistanceService, 
     private _driverService: DriverService) { }
 
   ngOnInit() {
@@ -71,7 +74,9 @@ export class AddDeliveryComponent implements OnInit {
     description: this.description,
     driverID: 1,
     customerID: 1,
-    ID: 1
+    ID: 1,
+    customerEmail: this.customerEmail
+  
   };
   this._deliveryService.addDelivery(request);
   console.log(this.description);

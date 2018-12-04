@@ -8,6 +8,7 @@ import {catchError,tap} from 'rxjs/operators';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { database } from 'firebase';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../service/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,18 @@ export class CustomerService {
 
 
   delveries: Observable<IDelivery[]>;
-
+  testEmail: string;
   customers: Observable<ICustomer[]>;
 
-  constructor(private _http:HttpClient,  private _afs: AngularFirestore ) { 
-    this.CustomersCollection = _afs.collection<ICustomer>("customers",ref => ref.where('email', '==', 'arif.matin@mail.itsligo.ie'));
-    this.RequestCollection = _afs.collection<IDelivery>("deliveries", ref => ref.where('cargoType', '==', 'books'));
+
+
+  constructor(private _http:HttpClient,  private _afs: AngularFirestore, private _auth :AuthService ) { 
+    this.testEmail = this._auth.getCutomerEmail();
+    console.log(this.testEmail);
+    //this.CustomersCollection = _afs.collection<ICustomer>("customers",ref => ref.where('email', '==', 'arif.matin@mail.itsligo.ie'));
+    this.CustomersCollection = _afs.collection<ICustomer>("customers");
+    this.RequestCollection = _afs.collection<IDelivery>("deliveries");// ads sorting to delivery component ++++
+
     //can query by where clause!
   }
 

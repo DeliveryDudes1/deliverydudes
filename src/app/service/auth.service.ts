@@ -13,6 +13,8 @@ export class AuthService {
   private user: Observable<firebase.User>;
   loggedInStatus: boolean = false;
 
+  customerEmail: string;
+
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router, private notifier: NotificationService) {
     this.user = _firebaseAuth.authState;
   }
@@ -63,6 +65,7 @@ export class AuthService {
   }
 
   doLogin(value){
+    this.customerEmail = value.email;
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
       .then(res => {
@@ -70,7 +73,7 @@ export class AuthService {
         this.loggedInStatus = true;
       }, err => reject(err))
     })
-  }
+  } 
 
   doLogout(){
     return new Promise((resolve, reject) => {
@@ -118,4 +121,10 @@ export class AuthService {
       })
     })
  }
+ 
+ getCutomerEmail() {
+   return this.customerEmail;
+   console.log(this.customerEmail);
+ }
+
 }

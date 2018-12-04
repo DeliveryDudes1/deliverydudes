@@ -18,7 +18,8 @@ export class DriverService {
   drivers: Observable<IDriver[]>;
 
 
-  constructor(private _http:HttpClient,  private _afs: AngularFirestore ) { 
+  constructor(private _http:HttpClient,  
+    private _afs: AngularFirestore ) { 
     this.driversCollection = _afs.collection<IDriver>("drivers");
   }
 

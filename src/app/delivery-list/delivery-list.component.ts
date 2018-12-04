@@ -23,8 +23,8 @@ export class DeliveryListComponent implements OnInit {
         this.filterDeliveries = deliveries;
     },
     error => this.errorMessage = <any>error);
-
   }
+
   showDivertComponent()
   {
     this.myRoute.navigate(["driver"]);
@@ -47,4 +47,5 @@ performFilter(filterBy : string) : IDelivery[]{
   return this.deliveries.filter((request : IDelivery) =>
       request.locationFrom.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
+
 }
