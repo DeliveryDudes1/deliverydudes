@@ -20,13 +20,14 @@ export class DeliveryListComponent implements OnInit {
 
   ngOnInit() {
       this.sortingEmail = this._auth.getCutomerEmail();
+
       this._deliveriesService.getProducts().subscribe(deliveries => {
-      this.deliveries = deliveries.filter(d => d.customerEmail == this.sortingEmail),// filter by customer email,
-        //this.filterDeliveries = deliveries;
+      this.deliveries = deliveries.filter(d => d.email == this.sortingEmail),// filter by customer email,
+      this.filterDeliveries = deliveries.filter(d => d.email == this.sortingEmail),
         console.log("list email --" , this.sortingEmail)
     },
     error => this.errorMessage = <any>error);
-
+    
   }
 
   showDivertComponent()

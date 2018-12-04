@@ -39,9 +39,9 @@ const routes: Routes = [
   { path: '', redirectTo:'login',pathMatch:'full',  },
   { path:'login', component: LoginComponent },
   { path:'signup', component:RegisterComponent },
-  { path: 'customer', component: CustomerComponent},
+  { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard]},
   { path: 'add-delivery', component:AddDeliveryComponent},
-  { path: 'delivery-list', component:DeliveryListComponent},
+  { path: 'delivery-list', component:DeliveryListComponent,canActivate: [AuthGuard]},
   { path: 'driver', component: DiverComponent},
   { path: '**', redirectTo:'login' , }
 ];

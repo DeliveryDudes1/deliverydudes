@@ -7,6 +7,6 @@ export interface IDelivery{
     cargoType: string;
     costOfDelivery: number;
     description: string;
-    customerEmail:string;
+    email: string;
     
  }

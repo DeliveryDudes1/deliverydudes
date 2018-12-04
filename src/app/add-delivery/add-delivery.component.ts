@@ -65,7 +65,7 @@ export class AddDeliveryComponent implements OnInit {
     driverID: 1,
     customerID: 1,
     ID: 1,
-    customerEmail: this.ADcustEmail // send to Firabase.
+    email: this.ADcustEmail // send to Firabase.
 
   };
 

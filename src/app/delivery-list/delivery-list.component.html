@@ -20,7 +20,7 @@
               <tbody>
                   <tr *ngFor='let product of filterDeliveries'>
                       <td>{{ product.locationFrom }}</td>
-                      <td>{{ product.locationTo}}</td>
+                      <td>{{ product.locationTo}}</td>                    
                       <td>{{ product.description }}</td>
                       <td>{{ product.costOfDelivery | currency: 'EUR':'symbol':'1.2-2' }}</td>
                       <td><button 
