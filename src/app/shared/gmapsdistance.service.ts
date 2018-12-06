@@ -12,12 +12,13 @@ export class GmapsdistanceService {
   url : string = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=";
   destations: string = "&destinations=";
   data: IDistanceMatrix;
+  cors: string = "https://cors-anywhere.herokuapp.com/";
 
   //https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=54.2744576,%20-8.461516800000002&destinations=54.17275899596889%20-8.487980399717344&key=AIzaSyBUp3Y-GD97Imt6axIjoY9zNz_M-bTObLA
 
   constructor(private _http: HttpClient) { }
 
   getImageList(origin: string, destination: string): Observable<IDistanceMatrix>{
-    return this._http.get<IDistanceMatrix>(this.url+origin+this.destations+destination+this.apiKey);
+    return this._http.get<IDistanceMatrix>(this.cors+this.url+origin+this.destations+destination+this.apiKey);
   }
 }
