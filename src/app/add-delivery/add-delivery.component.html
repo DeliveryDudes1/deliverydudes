@@ -30,7 +30,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
+    <form [formGroup]="form">
       <mat-form-field>
         <input [(ngModel)]="locationFrom" name="locationFrom" matInput placeholder="From" type="locationFrom" readonly>
       </mat-form-field>
@@ -47,7 +47,8 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input [(ngModel)]="cargoType" name="cargoType" matInput placeholder="Type of Delivery" type="cargoType">
+        <input [(ngModel)]="cargoType" name="cargoType" matInput placeholder="Type of Delivery" type="cargoType"
+        formControlName="cargoType">
       </mat-form-field>
       <br>
       <mat-form-field >
@@ -55,7 +56,8 @@
       </mat-form-field>
       <br>
       <mat-form-field >
-        <input [(ngModel)]="description" name="description" matInput placeholder="Description" type="description">
+        <input [(ngModel)]="description" name="description" matInput placeholder="Description" type="description"
+        formControlName="description">
       </mat-form-field>
       
       <br>

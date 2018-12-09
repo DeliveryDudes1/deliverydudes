@@ -15,6 +15,7 @@ import {  MatButtonModule, MatCardModule, MatFormFieldModule,MatFormFieldControl
           MatListModule, MatProgressSpinnerModule, MatTooltipModule,
           MatSnackBarModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationsComponent } from './notifications/notifications.component';
 
@@ -43,7 +44,7 @@ const routes: Routes = [
   { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard]},
   { path: 'add-delivery', component:AddDeliveryComponent,canActivate: [AuthGuard]},
   { path: 'delivery-list', component:DeliveryListComponent,canActivate: [AuthGuard]},
-  { path: 'driver', component: DiverComponent ,canActivate: [AuthGuard]},
+  { path: 'driver', component: DiverComponent },
   { path: '**', redirectTo:'login' , }
 ];
 
@@ -78,7 +79,7 @@ export class AppRoutingModule {}
     MatSelectModule,
     MatInputModule,
     MatTooltipModule,
-    //MatFormFieldControl,
+    MatDialogModule,
     MatFormFieldModule,
     MatListModule,
     MatProgressSpinnerModule,

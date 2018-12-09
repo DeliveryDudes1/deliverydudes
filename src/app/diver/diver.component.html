@@ -1,8 +1,8 @@
 
-<div class='card'>
+
   <div class='card-body'>
       <div class='table-responsive'>
-          <table class='table' *ngIf='driverData && driverData.length'>
+          <table class='table' *ngIf='drivers && drivers.length'>
               <thead>
                   <tr>             
                       <th>Name</th>
@@ -12,7 +12,7 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr *ngFor='let driver of driverData'>
+                  <tr *ngFor='let driver of drivers'>
                       <td>{{ driver.driverName }}</td>
                       <td>{{ driver.driverEmail}}</td>
                       <td>{{ driver.driverMobile }}</td>
@@ -20,5 +20,6 @@
               </tbody>
           </table>
       </div>
+      <button (click)='onNoClick()'>OK</button>
   </div>
-</div>
+

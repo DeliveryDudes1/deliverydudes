@@ -7,6 +7,7 @@ import { IDistanceMatrix } from '../IDistance';
 import { IDriver } from '../driver';
 import { AuthService } from '../service/auth.service';
 import {MatSnackBar} from '@angular/material';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -36,12 +37,19 @@ export class AddDeliveryComponent implements OnInit {
   ADcustEmail:string;
   spacer: string = ",%20";
   dudes: IDriver[] ;
+  form;
 
   constructor( private _deliveryService: CustomerService,
     private _distanceMatric : GmapsdistanceService, 
     private _driverService: DriverService,
     private _auth: AuthService,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    private fb: FormBuilder) { 
+      this.form = fb.group({
+        cargoType: ['',Validators.required],
+        description: ['',Validators.required]
+      });
+    }
 
   ngOnInit() {
     this.getUserLocation();
