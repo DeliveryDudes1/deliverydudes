@@ -3,18 +3,23 @@
   <mat-card-content>
     <form class="my-form" [formGroup]="form" (ngSubmit)="login()">
       <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" type="email" name="email" formControlName="email">
-      </mat-form-field>
+        <mat-label>Enter Email</mat-label>
+        <input matInput placeholder="johnsmith@hotmail.com" type="email" name="email" formControlName="email">
+     </mat-form-field>
+     <br>
+
       <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+        <mat-label>Enter Password</mat-label>
+        <input matInput placeholder="Must be at least 6 characters"  type="password" name="password" formControlName="password">
       </mat-form-field>
       </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button mat-raised-button (click)="login()" color="primary" id="loginBtn">Login</button>
   </mat-card-actions>
+  <div>
+  <label style="font-style: italic; border-bottom:solid black 1px; margin-left:115px; margin-bottom: 20px; ">or</label>
+  </div>
   <button mat-raised-button color="primary" (click)="loginGoogle()"
   matTooltip="Log in with Google" id="google">Google  </button>
   <button mat-raised-button color="primary" (click)="loginFb()"

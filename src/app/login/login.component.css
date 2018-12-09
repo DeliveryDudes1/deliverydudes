@@ -2,7 +2,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 35%;
+    height: auto;
     margin-top: 5%;
     margin-bottom: 5%;
     padding: 5%;
@@ -26,4 +27,10 @@ mat-card{
 #google{
     background-color: red;
     margin-right: 5px;
+}
+#loginBtn
+{
+    width: 40%;
+    margin-left: 95px;
+
 }
