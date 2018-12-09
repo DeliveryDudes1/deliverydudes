@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { IDriver } from '../driver';
 import { DriverService } from '../shared/driver.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-diver',
@@ -10,13 +11,31 @@ import { DriverService } from '../shared/driver.service';
 export class DiverComponent implements OnInit {
 
   driverData : IDriver[];
+  drivers: IDriver[];
+  public driver_ID: number;
 
-  constructor(private _Driver: DriverService) { }
+  constructor(private _Driver: DriverService,  public dialogRef: MatDialogRef<DiverComponent>,
+    @Inject(MAT_DIALOG_DATA) public driveiD: number) { }
+
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 
   ngOnInit() {
+    console.log(this.driver_ID);
     this._Driver.getDrivers().subscribe(data => {
       this.driverData = data
     });
+
+    this.drivers = this.getDriverData();
   }
 
+
+  //trying to filter drivers array but not working.
+  getDriverData() : IDriver[]{
+     return this.driverData.filter((driver : IDriver) => driver.driverID == this.driver_ID);
+    console.log(this.driver_ID);
+  }
 }

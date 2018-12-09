@@ -24,7 +24,7 @@
                       <td>{{ product.description }}</td>
                       <td>{{ product.costOfDelivery | currency: 'EUR':'symbol':'1.2-2' }}</td>
                       <td><button 
-                            mat-raised-button color="primary"  (click)="showDivertComponent()">See Driver
+                            mat-raised-button color="primary"  (click)="openDialog(product.driverID)">See Driver
                         </button>
                         </td>
                         <td><button id="remove" class="btn" (click)="deleteRequest(product.id)"><i class="fa fa-trash"></i>Delete</button></td>
