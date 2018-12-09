@@ -39,13 +39,12 @@
         <input [(ngModel)]="locationTo" name="locationTo" matInput placeholder="To" type="locationTo" readonly>
       </mat-form-field>
       <br>
-
+<!--  Get Driver's name from firebase for selection dropdownlist -->
       <mat-form-field>
           <mat-select placeholder="Pick your  DeliveryDude" >
-              <mat-option *ngFor="let e of dudes" value="{{e.driverName}}">{{e.driverName}}</mat-option>
+              <mat-option *ngFor="let d of dudes" value="{{d.driverName}}">{{d.driverName}}</mat-option>
           </mat-select>
       </mat-form-field>
-
       <mat-form-field>
         <input [(ngModel)]="cargoType" name="cargoType" matInput placeholder="Type of Delivery" type="cargoType"
         formControlName="cargoType">
@@ -59,7 +58,6 @@
         <input [(ngModel)]="description" name="description" matInput placeholder="Description" type="description"
         formControlName="description">
       </mat-form-field>
-      
       <br>
       <button (click)="makeRequest()" mat-raised-button color="primary">Make Request</button>
     </form>
