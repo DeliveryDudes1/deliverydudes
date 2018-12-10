@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard]},
   { path: 'add-delivery', component:AddDeliveryComponent,canActivate: [AuthGuard]},
   { path: 'delivery-list', component:DeliveryListComponent,canActivate: [AuthGuard]},
-  { path: 'driver', component: DiverComponent },
+  { path: 'driver', component: DiverComponent , canActivate: [AuthGuard]},
   { path: '**', redirectTo:'login' , }
 ];
 

@@ -10,7 +10,7 @@ import { stringify } from 'querystring';
   styleUrls: ['./diver.component.css']
 })
 export class DiverComponent implements OnInit {
-
+//code by Arif Matin - S00167749
   driverData : IDriver[];
   drivers: IDriver[];
   public driver_ID: number;
@@ -32,7 +32,7 @@ export class DiverComponent implements OnInit {
   }
   //trying to filter drivers array but not working.
 
-
+//code by Arif Matin - S00167749
 
   //trying to filter drivers array but not working.
   getDriverData() : IDriver[]{

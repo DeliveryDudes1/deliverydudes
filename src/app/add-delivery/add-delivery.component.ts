@@ -81,7 +81,7 @@ export class AddDeliveryComponent implements OnInit {
   console.log(this.description);
   this.OpenSnackBar("Delivery request made")
   }
-
+//code by Arif Matin - S00167749
   private getUserLocation() {
     /// locate the user
     if (navigator.geolocation) {
@@ -110,7 +110,7 @@ export class AddDeliveryComponent implements OnInit {
      this.getDistance();
  
    }
- 
+ //code by Arif Matin - S00167749
     getDistance(){
       this.locationFrom = "";
       this.locationTo = "";

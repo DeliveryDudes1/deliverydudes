@@ -92,7 +92,7 @@ export class AuthService {
   isLoggedIn():boolean {
       return this.loggedInStatus;
   }
-
+//code by Arif Matin - S00167749
   doGoogleLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.GoogleAuthProvider();
@@ -106,7 +106,7 @@ export class AuthService {
       })
     })
   }
-
+//code by Arif Matin - S00167749
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.FacebookAuthProvider();
@@ -121,7 +121,7 @@ export class AuthService {
       })
     })
  }
- 
+ //code by Arif Matin - S00167749
  getCutomerEmail() {
    return this.customerEmail;
    console.log(this.customerEmail);

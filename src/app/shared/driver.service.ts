@@ -12,7 +12,7 @@ import { IDriver } from '../driver';
 @Injectable({
   providedIn: 'root'
 })
-
+//code by Arif Matin - S00167749
 export class DriverService {
   driversCollection:  AngularFirestoreCollection<IDriver>;
   drivers: Observable<IDriver[]>;
@@ -22,7 +22,7 @@ export class DriverService {
     private _afs: AngularFirestore ) { 
     this.driversCollection = _afs.collection<IDriver>("drivers");
   }
-
+//code by Arif Matin - S00167749
 getDrivers() : Observable<IDriver[]> {
 
   this.drivers = this.driversCollection.snapshotChanges().pipe(
