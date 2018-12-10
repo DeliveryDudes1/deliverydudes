@@ -1,5 +1,5 @@
 #remove{
-    background-color: #F35036;
+    background-color: #65E397;
     color: white;
 }
 
@@ -8,6 +8,24 @@
 }
 
 .card-body{
-    background-color: white;
+  
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
     padding:10px;
 }
+
+/*th, td {
+    text-align: left;
+    padding: 8px;
+}*/
+
+tr:nth-child(even) {
+    background-color: #d2f7e5;
+}
+th {
+    background-color:#65E3D6;
+    color: white;
+  }
+
+  

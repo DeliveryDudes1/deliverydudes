@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
   pwd: string;
   name: string;
   phone: string;
-  //cid:number;
   isClicked: boolean;
 
   constructor(private auth: AuthService, private _customerService: CustomerService, private routes: Router)
@@ -29,8 +28,7 @@ export class RegisterComponent implements OnInit {
     this.auth.signup(this.email, this.pwd,this.name);
     console.log(this.email);
     console.log(this.pwd);
-    // add customer to customers collection in fb
-    //customer ID hard coded
+    // add customer to customers collection in fb == Marek ==
     let customer : ICustomer = {
       email:this.email,
       name:this.name,
@@ -40,8 +38,6 @@ export class RegisterComponent implements OnInit {
     this._customerService.addCustomer(customer)
 
     this.isClicked = true;
-    //do one or the other
-    //this.routes.navigate(['customer']); //change that to request list;
 
   }
 

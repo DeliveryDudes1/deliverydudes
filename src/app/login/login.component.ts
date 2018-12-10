@@ -25,10 +25,9 @@ export class LoginComponent implements OnInit {
   }
 //code by Arif Matin - S00167749
   login(){
-    
     this.auth.doLogin(this.form.value).then(
       res => {
-        this.myRoute.navigate(['customer']); //change that to request list
+        this.myRoute.navigate(['customer']); 
       }, err => {
         console.log(err);
         this.errorMessage = err.message;

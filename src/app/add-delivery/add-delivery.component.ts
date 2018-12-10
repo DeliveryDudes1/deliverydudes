@@ -51,17 +51,16 @@ export class AddDeliveryComponent implements OnInit {
 
   ngOnInit() {
     this.getUserLocation();
-    // get drivers names for selection.
+    // get drivers names for selection == Marek == .
     this._driverService.getDrivers().subscribe(data => {
     this.dudes = data,
       console.log(data)
     });
     
-    this.ADcustEmail = this._auth.getCutomerEmail();// get this customer email;
+    this.ADcustEmail = this._auth.getCutomerEmail();// current customer email == Marek == ;
     console.log("make delivery cust email -- " ,this.ADcustEmail);
   }
  //  send request to fb db.
-
   makeRequest(){
  
     let request : IDelivery = {    
@@ -73,7 +72,7 @@ export class AddDeliveryComponent implements OnInit {
     driverID: 1,
     customerID: 1,
     ID: 1,
-    email: this.ADcustEmail // send to Firabase as sorting referance.
+    email: this.ADcustEmail // use to send to Firabase as sorting referance == Marek == .
 
   };
   // Sends delivery data to firebase.
@@ -83,7 +82,7 @@ export class AddDeliveryComponent implements OnInit {
   }
 //code by Arif Matin - S00167749
   private getUserLocation() {
-    /// locate the user
+    /// locate the user == Ariff == 
     if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;

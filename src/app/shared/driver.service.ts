@@ -8,7 +8,7 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
 import { database } from 'firebase';
 import { map } from 'rxjs/operators';
 import { IDriver } from '../driver';
-
+/// =============== Service coded by Marek ===
 @Injectable({
   providedIn: 'root'
 })

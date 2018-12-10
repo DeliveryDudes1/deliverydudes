@@ -22,7 +22,7 @@ export class CustomerComponent implements OnInit {
 
       this.cEmail = this.__auth.getCutomerEmail();
       this._deliveriesService.getCustomers().subscribe(customers => {
-      this.customers = customers.filter(c => c.email == this.cEmail); // filter customers by email.
+      this.customers = customers.filter(c => c.email == this.cEmail); // filter customers by email == Marek ==.
       console.log("customer email -- ", this.cEmail);
     },
 
