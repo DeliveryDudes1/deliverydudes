@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { MatDialog,MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DiverComponent } from '../diver/diver.component';
+import { DeliveryService } from '../shared/delivery.service';
 @Component({
   selector: 'app-delivery-list',
   templateUrl: './delivery-list.component.html',
@@ -18,13 +19,13 @@ export class DeliveryListComponent implements OnInit {
   _listFilter: string;
   sortingEmail: string;
 
-  constructor( private _deliveriesService: CustomerService,private myRoute: Router, private _auth: AuthService,
+  constructor( private _deliveryService: DeliveryService,private myRoute: Router, private _auth: AuthService,
     public dialog: MatDialog) { }
 
   ngOnInit() {
       this.sortingEmail = this._auth.getCutomerEmail();
 
-      this._deliveriesService.getProducts().subscribe(deliveries => {
+      this._deliveryService.getProducts().subscribe(deliveries => {
       this.deliveries = deliveries.filter(d => d.email == this.sortingEmail),// filter by customer email,
       this.filterDeliveries = deliveries.filter(d => d.email == this.sortingEmail),
         console.log("list email --" , this.sortingEmail)
@@ -39,7 +40,7 @@ export class DeliveryListComponent implements OnInit {
   }
 
   deleteRequest(id: string): void{
-    this._deliveriesService.deleteRequest(id);
+    this._deliveryService.deleteRequest(id);
 }
 get listFilter() : string {
   return this._listFilter;

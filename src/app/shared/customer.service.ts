@@ -15,9 +15,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class CustomerService {
   CustomersCollection: AngularFirestoreCollection<ICustomer>;
-  RequestCollection:AngularFirestoreCollection<IDelivery>;
-
-  delveries: Observable<IDelivery[]>;
+ 
   testEmail: string;
   customers: Observable<ICustomer[]>;
 
@@ -26,29 +24,11 @@ export class CustomerService {
     console.log(this.testEmail);
     //this.CustomersCollection = _afs.collection<ICustomer>("customers",ref => ref.where('email', '==', 'arif.matin@mail.itsligo.ie'));
     this.CustomersCollection = _afs.collection<ICustomer>("customers");
-    this.RequestCollection = _afs.collection<IDelivery>("deliveries");
+ 
   }
 
   addCustomer(customer: ICustomer) {
     this.CustomersCollection.add(customer);
-  }
-  
-  addDelivery( delivery:IDelivery){
-    this.RequestCollection.add(delivery);
-  }
-
-  getProducts(): Observable<IDelivery[]> {
-    
-     this.delveries = this.RequestCollection.snapshotChanges().pipe(
-       map(actions => actions.map(a => {
-         const data = a.payload.doc.data() as IDelivery;
-         console.log("GetProducts : data " + JSON.stringify(data));
-         const id = a.payload.doc.id;
-         return { id, ...data };
-       }))
-     );
-     return this.delveries;
-     
   }
 
   getCustomers(): Observable<ICustomer[]> {
@@ -65,10 +45,5 @@ export class CustomerService {
     
  }
 
-  deleteRequest(id:string): void {
-    this.RequestCollection.doc(id).delete()
-    .catch(error => {console.log("deleteRequest error: "+error)})
-    .then(() => console.log("deleteRequested: id = "+id));
-  }
 }
 
