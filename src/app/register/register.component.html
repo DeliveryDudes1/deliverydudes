@@ -2,29 +2,33 @@
 <mat-card *ngIf="!isClicked" id="matcard">
   <mat-card-header>
     <mat-card-title>
-      <h4>Register New Customer</h4>
+      <h4 id="formHeader">Register New Customer</h4>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
-      <mat-form-field>
-        <input [(ngModel)]="email" name="email" matInput placeholder="email" type="email">
+    <form id="form">
+      <mat-form-field  class="registerInputs">
+          <mat-label>Enter Email</mat-label>
+        <input [(ngModel)]="email" name="email" matInput placeholder="Example johnsmith@hotmail.com" type="email">
       </mat-form-field>
       <br>
-      <mat-form-field>
-        <input [(ngModel)]="pwd" name="password" matInput placeholder="password" type="password" >
+      <mat-form-field  class="registerInputs">
+          <mat-label>Enter Password</mat-label>
+        <input [(ngModel)]="pwd" name="password" matInput placeholder="Must be at least 6 characters" type="password" >
       </mat-form-field>
       <br>
-      <mat-form-field>
-        <input [(ngModel)]="name" name="name" matInput placeholder="name">
+      <mat-form-field class="registerInputs">
+          <mat-label>Enter your full name</mat-label>
+        <input [(ngModel)]="name" name="name" matInput placeholder="Example: John Smith">
       </mat-form-field>
       <br>
-      <mat-form-field >
-        <input [(ngModel)]="phone" name="phone" matInput placeholder="phone" type="phone">
+      <mat-form-field class="registerInputs">
+          <mat-label>Enter your phone number</mat-label>
+        <input [(ngModel)]="phone" name="phone" matInput placeholder="e.g. 00353 86 1234567"  pattern='[0-9]{8}([0-9]{2})?' type="phone">
       </mat-form-field>
       
       <br>
-      <button (click)="register()" mat-raised-button color="primary">Register</button>
+      <button id="registerBtn" (click)="register()" mat-raised-button color="primary">Register</button>
     </form>
   </mat-card-content>
 </mat-card>
@@ -32,10 +36,11 @@
 <mat-card *ngIf="isClicked">
   <mat-card-header>
     <mat-card-title>
-      <h4>Yayy!!</h4>
+      <h4>Yayy!!</h4><br>
+      <h4>Registration Complete</h4>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p>Please check your email to verify your account.</p>
+    <p>Please check your email and click on the link to verify your account.</p>
   </mat-card-content>
 </mat-card>

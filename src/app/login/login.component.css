@@ -2,7 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 45%;
     height: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -23,13 +23,7 @@
 .btn-danger{
     margin-right: 2%;
 }
-/* mat-card{
-    background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-    padding:40px;
-} */
+
 #fb{
     background-color: blue;
     margin-top: 5%;
@@ -51,7 +45,7 @@
 }
 .socialLogin{
     display: inline-block;
-    margin-left: 15%;
+    margin-left: 20%;
   }
 #socialLabel{
     font-style: italic; 
