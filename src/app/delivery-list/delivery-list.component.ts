@@ -26,7 +26,7 @@ export class DeliveryListComponent implements OnInit {
       this.sortingEmail = this._auth.getCutomerEmail();
 
       this._deliveryService.getDelivery().subscribe(deliveries => {
-      this.deliveries = deliveries.filter(d => d.email == this.sortingEmail),// filter by customer email,
+      this.deliveries = deliveries.filter(d => d.email == this.sortingEmail),// filter by customer email == Marek == ,
       this.filterDeliveries = deliveries.filter(d => d.email == this.sortingEmail),
         console.log("list email --" , this.sortingEmail)
     },
@@ -52,7 +52,7 @@ set listFilter(value : string) {
 
 }
 
-performFilter(filterBy : string) : IDelivery[]{
+performFilter(filterBy : string) : IDelivery[]{ // 
   filterBy = filterBy.toLocaleLowerCase();
   return this.deliveries.filter((request : IDelivery) => 
       request.locationTo.toLocaleLowerCase().indexOf(filterBy) !== -1);

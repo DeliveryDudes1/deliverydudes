@@ -30,11 +30,8 @@ export class DiverComponent implements OnInit {
     });
 
   }
-  //trying to filter drivers array but not working.
-
-
-
-  //trying to filter drivers array but not working.
+  
+  //filter drivers array but not working .
   getDriverData() : IDriver[]{
       let x: number = this.driver_ID;
   
@@ -45,10 +42,5 @@ export class DiverComponent implements OnInit {
       return obj;   
   }
 
-    // console.log("1: Driver: ",JSON.stringify( this.driverData));
-    //     console.log(this.driver_ID);
-
-    //  return this.driverData.filter((driver : IDriver) => {console.log("2: Driver: ",JSON.stringify(driver)),driver.driverID == this.driver_ID});
-    // console.log(this.driver_ID);
-  // }
+ 
 }

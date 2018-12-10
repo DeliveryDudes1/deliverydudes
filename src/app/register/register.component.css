@@ -1,19 +1,32 @@
 #matcard{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-top: 5%;
+    width: 45%;
+    margin-top: 15%;
     margin-bottom: 5%;
-    padding: 5%;
     background: white;
+    margin-left: 30%;
+    height: 20%;
+    opacity: 0.85;
+}
+mat-card{
+     background-image:url("https://www.icoderzsolutions.com/image/fd-03.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size:cover; 
 }
 
-mat-card{
-    background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-    padding:10px;
-
+#formHeader
+{
+    display: inline;
+    margin-left: 33%;
+    margin-right: -35%;
+}
+.registerInputs{
+    width: 80%;
+    margin-left: 10%;
+}
+#registerBtn{
+    margin-left: 25%;
+    margin-right: 83%;
+    width: 45%;
 }

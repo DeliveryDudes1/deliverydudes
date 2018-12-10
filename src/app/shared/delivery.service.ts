@@ -9,7 +9,7 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
 import { database } from 'firebase';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../service/auth.service';
-
+/// =============== Service coded by Marek ===
 @Injectable({
   providedIn: 'root'
 })

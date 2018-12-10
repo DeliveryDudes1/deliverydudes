@@ -7,9 +7,12 @@
     width: 50%;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+.card-body{
+  
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    padding:10px;
 }
 
 /*th, td {

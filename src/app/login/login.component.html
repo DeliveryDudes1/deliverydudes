@@ -1,27 +1,29 @@
-<mat-card>
+<mat-card id=matcardMain>
 <mat-card id="matcard">
   <mat-card-content>
     <form class="my-form" [formGroup]="form" (ngSubmit)="login()">
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" type="email" name="email" formControlName="email">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+      <mat-form-field class="inputLogin">
+        <mat-label>Enter Email</mat-label>
+        <input matInput placeholder="johnsmith@hotmail.com" type="email" name="email" formControlName="email">
+     </mat-form-field>
+     <br>
+      <mat-form-field class="inputLogin">
+        <mat-label>Enter Password</mat-label>
+        <input matInput placeholder="Must be at least 6 characters"  type="password" name="password" formControlName="password">
       </mat-form-field>
       </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button mat-raised-button (click)="login()" color="primary" id="loginBtn">Login</button>
   </mat-card-actions>
-  <mat-card-actions>
+  <div>
+    <br>
+  <label id="socialLabel" >or</label>
+  </div>
+  <div class="socialLogin">
   <button mat-raised-button color="primary" (click)="loginGoogle()"
   matTooltip="Log in with Google" id="google"><i class="fa fa-google-plus"></i> </button>
   <button mat-raised-button color="primary" (click)="loginFb()"
   matTooltip="Log in with Facebook" id="fb"> <i class="fa fa-facebook"></i> </button>
-</mat-card-actions>
-</mat-card>
-</mat-card>
 
 

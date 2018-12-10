@@ -33,7 +33,10 @@ html {
     background-color: #f5f5f5;
     position: relative;
     z-index: 1;
-    background-image: url(https://wallpapertag.com/wallpaper/full/8/3/2/946554-best-volvo-2018-truck-wallpaper-mobileu-1920x1080-for-tablet.jpg);
+    background-image: url(https://vignette.wikia.nocookie.net/taekwondo/images/d/d7/Sky.jpg/revision/latest?cb=20150422142904);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .body {
@@ -102,7 +105,10 @@ html {
     width: 206px;
     height: 206px;
     margin: 5px;
-    background-image: url(http://cdn.trustedpartner.com/images/library/PalmBeachFilmCommission2013/Logos/Delivery%20Dudes.png);
+    background-image: url(https://avatoon.net/wp-content/uploads/2018/06/avatar_portfolio_02.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   /* CENTER */
@@ -176,7 +182,7 @@ html {
   }
   #matcard{
     height: 700px;
-    background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
+    background-image:url("https://www.caryinstitute.org/sites/default/files/public/images/podcasts/pc_trees_forest.jpg");
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
@@ -184,5 +190,13 @@ html {
   }
   #matcard2{
     height: 600px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   
+  .image-upload > input {
+    visibility:hidden;
+    width:10%;
+    height:0
+  }

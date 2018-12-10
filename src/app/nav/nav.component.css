@@ -1,3 +1,18 @@
+#deliveryDudes{
+font-family: AR Berkley;
+font-size: 30px;
+width: 30%;
+
+}
+
+#register{
+    margin-right: 5%;
+}
+
+*{
+background-color: blueviolet;
+
+}
 .color{
     background-color:#6572E3;
     border-radius: 0.5ch;
