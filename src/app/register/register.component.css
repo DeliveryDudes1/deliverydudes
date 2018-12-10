@@ -1,12 +1,12 @@
 #matcard{
     display: block;
     width: 45%;
-    margin-top: 15%;
-    margin-bottom: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     background: white;
-    margin-left: 30%;
+    margin-left: 25%;
     height: 20%;
-    opacity: 0.85;
+   
 }
 mat-card{
      background-image:url("https://www.icoderzsolutions.com/image/fd-03.png");
