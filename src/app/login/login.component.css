@@ -2,7 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    width: 50%;
     height: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -23,13 +23,13 @@
 .btn-danger{
     margin-right: 2%;
 }
-mat-card{
+/* mat-card{
     background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
-    padding:80px;
-}
+    padding:40px;
+} */
 #fb{
     background-color: blue;
     margin-top: 5%;
