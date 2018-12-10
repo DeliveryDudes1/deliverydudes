@@ -3,10 +3,19 @@
 
 <div class="cover-photo"></div>
 <div class="body">
-  <section class="left-col user-info">
+  <section class="left-col">
     <div class="profile-avatar">
       <div class="inner"></div>
     </div>
+
+    <div class="image-upload">
+    <label for="file-input">
+      <input id="file-input" type="file">
+        
+      </label>
+
+    </div>
+
     <div class="meta" *ngFor="let c of customers" >
     <h1>{{ c.name }}</h1>
     <h2>Customer</h2>
@@ -15,8 +24,10 @@
       <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
     </div>
   </section>
-  <section class="section center-col content">
+
+  <section class="center-col">
     <!-- Nav -->
+    <div>
     <nav class="profile-nav">
       <ul>
         <li class="active">Activity</li>
@@ -25,12 +36,7 @@
         <li>Loved</li>
       </ul>
     </nav>
-    
-    <!-- Wil hyped X-->
-    <div class="unit user-hyped">
-      <h3>  </h3>
-      
-    </div>   
+    </div>
   </section>
 </div>
 </mat-card>

@@ -5,3 +5,11 @@
 #search{
     width: 50%;
 }
+
+.card-body{
+    background-image:url("https://www.caryinstitute.org/sites/default/files/public/images/podcasts/pc_trees_forest.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    padding:10px;
+}
