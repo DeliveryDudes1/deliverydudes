@@ -2,8 +2,7 @@
 font-family: AR Berkley;
 font-size: 30px;
 width: 30%;
-/* margin-left: 35%;
-margin-right: 30%; */
+
 }
 
 #register{
@@ -13,4 +12,19 @@ margin-right: 30%; */
 *{
 background-color: blueviolet;
 
+}
+.color{
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+#login, #register, #myDeliveries, #requestDelivery, #logout
+
+{
+    border-left: 1px solid yellow;
+}
+
+#login, #register, #myDetails, #myDeliveries, #requestDeliveries
+{
+border-right: 1px solid yellow;
 }

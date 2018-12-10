@@ -4,14 +4,9 @@
     margin-top: 15%;
     margin-bottom: 5%;
     background: white;
-    margin-left: 20%;
+    margin-left: 30%;
     height: 20%;
     opacity: 0.85;
-    /* background-image:url("https://www.icoderzsolutions.com/image/fd-03.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    background-size:inherit;  */
 }
 mat-card{
      background-image:url("https://www.icoderzsolutions.com/image/fd-03.png");
