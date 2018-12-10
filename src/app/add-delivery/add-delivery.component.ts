@@ -45,13 +45,9 @@ export class AddDeliveryComponent implements OnInit {
     private _driverService: DriverService,
     private _auth: AuthService,
     private _deliveryService :DeliveryService,
-    public snackBar: MatSnackBar,
-    private fb: FormBuilder) { 
-      this.form = fb.group({
-        cargoType: ['',Validators.required],
-        description: ['',Validators.required]
-      });
-    }
+    public snackBar: MatSnackBar
+  )
+  { }
 
   ngOnInit() {
     this.getUserLocation();
@@ -128,7 +124,7 @@ export class AddDeliveryComponent implements OnInit {
       this.costOfDelivery = (this.distanceData.rows[0].elements[0].distance.value /1000) * 1.1;
 
       console.log(this.locationFrom, this.locationTo);
-      //this.distance = this.distanceData.rows[0].elements[0].distance.value;
+      this.distance = this.distanceData.rows[0].elements[0].distance.value;
       this.isclicked = true;
     }
 
