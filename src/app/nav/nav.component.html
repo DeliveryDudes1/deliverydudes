@@ -1,13 +1,8 @@
 <mat-toolbar class="color">
   
-  <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" > Delivery D's </button>
-  
-<<<<<<< HEAD
   <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" id="deliveryDudes" routerLink="login"> Delivery Dudes </button>
 
  
-=======
->>>>>>> 08111561d4b973c9e3705354be26c9151218fc56
   <button mat-button routerLinkActive="active" routerLink="delivery-list" *ngIf="userLoggedIn()"> My Deliveries </button>
   <button mat-button routerLinkActive="active" routerLink="add-delivery" *ngIf="userLoggedIn()"> Request Delivery </button>
   <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()" routerLink="customer"> My Details </button>
