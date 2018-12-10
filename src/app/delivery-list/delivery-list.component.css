@@ -1,5 +1,5 @@
 #remove{
-    background-color: #c60000;
+    background-color: #F35036;
     color: white;
 }
 
@@ -12,11 +12,15 @@ table {
     width: 100%;
 }
 
-th, td {
+/*th, td {
     text-align: left;
     padding: 8px;
-}
+}*/
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+th {
+    background-color:#C1C076;
+    color: black;
+  }
