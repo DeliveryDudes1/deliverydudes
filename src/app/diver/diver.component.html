@@ -1,25 +1,26 @@
 
+  <div class="container">
+	
 
-  <div class='card-body'>
-      <div class='table-responsive'>
-          <table class='table' *ngIf='drivers && drivers.length'>
-              <thead>
-                  <tr>             
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Mobile</th>
-                     
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor='let driver of drivers'>
-                      <td>{{ driver.driverName }}</td>
-                      <td>{{ driver.driverEmail}}</td>
-                      <td>{{ driver.driverMobile }}</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-      <button (click)='onNoClick()'>OK</button>
-  </div>
+            <div class="card hovercard">
+                <div class="cardheader">
 
+                </div>
+                <div class="avatar">
+                    <img alt="" src="http://lorempixel.com/100/100/people/9/">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="https://scripteden.com/">Script Eden</a>
+                    </div>
+                    <div class="desc">Passionate designer</div>
+                    <div class="desc">Curious developer</div>
+                    <div class="desc">Tech geek</div>
+                </div>
+                <div class="bottom">
+                   
+                    <button class="btn btn-danger btn-sm" (click)='onNoClick()'>OK</button>
+                </div>
+            </div>
+
+</div>

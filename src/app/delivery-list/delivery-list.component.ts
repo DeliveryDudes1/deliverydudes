@@ -67,10 +67,8 @@ openDialog(driverID : number): void {
 
   dialogRef.afterClosed().subscribe(result => {
     console.log('The dialog was closed');
-    //this.animal = result;
   });
 
-  console.log(driverID);
 }
 
 }
