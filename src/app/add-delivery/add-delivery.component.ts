@@ -123,7 +123,7 @@ export class AddDeliveryComponent implements OnInit {
       this.costOfDelivery = (this.distanceData.rows[0].elements[0].distance.value /1000) * 1.1;
 
       console.log(this.locationFrom, this.locationTo);
-      this.distance = this.distanceData.rows[0].elements[0].distance.value;
+      //this.distance = this.distanceData.rows[0].elements[0].distance.value;
       this.isclicked = true;
     }
 

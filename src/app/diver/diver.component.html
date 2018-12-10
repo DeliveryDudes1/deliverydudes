@@ -7,15 +7,15 @@
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="http://lorempixel.com/100/100/people/9/">
+                    <img alt="" src="https://image.flaticon.com/icons/svg/206/206883.svg">
                 </div>
-                <div class="info">
+                <div class="info" *ngFor='let driver of drivers'>
                     <div class="title">
-                        <a target="_blank" href="https://scripteden.com/">Script Eden</a>
+                        {{driver.driverName}}
                     </div>
-                    <div class="desc">Passionate designer</div>
-                    <div class="desc">Curious developer</div>
-                    <div class="desc">Tech geek</div>
+                    <div class="desc">{{ driver.driverMobile}}</div>
+                    <div class="desc">{{driver.driverEmail}}</div>
+                    <div class="desc">Professtional</div>
                 </div>
                 <div class="bottom">
                    

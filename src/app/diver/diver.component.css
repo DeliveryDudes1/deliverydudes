@@ -16,6 +16,16 @@
     box-sizing: border-box;
 }
 
+.container{
+    background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    color: white;
+    
+
+}
+
 .card .card-heading {
     padding: 0 20px;
     margin: 0;
@@ -193,7 +203,7 @@
 }
 
 .card.hovercard .cardheader {
-    background: url("http://lorempixel.com/850/280/nature/4/");
+    background: url("https://www.arup.com/-/media/arup/images/expertise/industries/highways-header-m6_toll_birmingham_northern_relief_road_bnrr_david_griffiths_photography-2000x1125.jpg?h=1125&la=en&w=2000&hash=B2EA70C39B467E5BD987337BE4A14C83DC7241DF");
     background-size: cover;
     height: 135px;
 }
