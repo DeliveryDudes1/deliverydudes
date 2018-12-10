@@ -27,7 +27,7 @@ export class DeliveryService {
     this.RequestCollection.add(delivery);
   }
 
-  getProducts(): Observable<IDelivery[]> {
+  getDelivery(): Observable<IDelivery[]> {
     
      this.delveries = this.RequestCollection.snapshotChanges().pipe(
        map(actions => actions.map(a => {
@@ -38,8 +38,8 @@ export class DeliveryService {
        }))
      );
      return this.delveries;
-     
   }
+
 
   deleteRequest(id:string): void {
     this.RequestCollection.doc(id).delete()

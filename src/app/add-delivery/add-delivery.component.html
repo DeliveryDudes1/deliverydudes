@@ -30,7 +30,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form [formGroup]="form">
+    <form >
       <mat-form-field>
         <input [(ngModel)]="locationFrom" name="locationFrom" matInput placeholder="From" type="locationFrom" readonly>
       </mat-form-field>
@@ -46,8 +46,8 @@
           </mat-select>
       </mat-form-field>
       <mat-form-field>
-        <input [(ngModel)]="cargoType" name="cargoType" matInput placeholder="Type of Delivery" type="cargoType"
-        formControlName="cargoType">
+        <input [(ngModel)]="cargoType" name="cargoType" matInput placeholder="Type of Delivery" type="cargoType">
+        
       </mat-form-field>
       <br>
       <mat-form-field >
@@ -56,7 +56,7 @@
       <br>
       <mat-form-field >
         <input [(ngModel)]="description" name="description" matInput placeholder="Description" type="description"
-        formControlName="description">
+        >
       </mat-form-field>
       <br>
       <button (click)="makeRequest()" mat-raised-button color="primary">Make Request</button>
