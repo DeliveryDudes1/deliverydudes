@@ -23,9 +23,6 @@
 .btn-danger{
     margin-right: 2%;
 }
-<<<<<<< HEAD
-
-=======
 mat-card{
     background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
     background-repeat:no-repeat;
@@ -33,7 +30,6 @@ mat-card{
     background-size:cover;
     padding:80px;
 }
->>>>>>> 08111561d4b973c9e3705354be26c9151218fc56
 #fb{
     background-color: blue;
     margin-top: 5%;
