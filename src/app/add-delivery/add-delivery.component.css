@@ -2,17 +2,13 @@ agm-map {
   height: 450px;
   width: 540px;
   text-align: center;
-  
   display: block;
   margin-left: auto;
   margin-right: auto;
   float: right;
 }
-
-
 mat-form-field {
   width: 100%;
-
 }
 mat-card{
 width:50%;

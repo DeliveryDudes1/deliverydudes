@@ -15,46 +15,20 @@ import { AuthService } from '../service/auth.service';
 })
 export class CustomerService {
   CustomersCollection: AngularFirestoreCollection<ICustomer>;
-  RequestCollection:AngularFirestoreCollection<IDelivery>;
-
-
-  delveries: Observable<IDelivery[]>;
+ 
   testEmail: string;
   customers: Observable<ICustomer[]>;
-
-
 
   constructor(private _http:HttpClient,  private _afs: AngularFirestore, private _auth :AuthService ) { 
     this.testEmail = this._auth.getCutomerEmail();
     console.log(this.testEmail);
     //this.CustomersCollection = _afs.collection<ICustomer>("customers",ref => ref.where('email', '==', 'arif.matin@mail.itsligo.ie'));
     this.CustomersCollection = _afs.collection<ICustomer>("customers");
-    this.RequestCollection = _afs.collection<IDelivery>("deliveries");// ads sorting to delivery component ++++
-
-    //can query by where clause!
+ 
   }
 
   addCustomer(customer: ICustomer) {
     this.CustomersCollection.add(customer);
-  }
-  
-  addDelivery( delivery:IDelivery){
-    this.RequestCollection.add(delivery);
-  }
-
-  getProducts(): Observable<IDelivery[]> {
-    
-     this.delveries = this.RequestCollection.snapshotChanges().pipe(
-       map(actions => actions.map(a => {
-         const data = a.payload.doc.data() as IDelivery;
-         console.log("GetProducts : data " + JSON.stringify(data));
-         const id = a.payload.doc.id;
-         console.log("getProducts.id = "+id );
-         return { id, ...data };
-       }))
-     );
-     return this.delveries;
-     
   }
 
   getCustomers(): Observable<ICustomer[]> {
@@ -62,7 +36,7 @@ export class CustomerService {
     this.customers = this.CustomersCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as ICustomer;
-        console.log("GetCustomers : data " + JSON.stringify(data));
+        //console.log("GetCustomers : data " + JSON.stringify(data));// removed due to security issues
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
@@ -71,31 +45,5 @@ export class CustomerService {
     
  }
 
-  /*
-  getCustomerData(){
-    tableOne.on('value', function (snapshot) {
-      var userId = snapshot.val().userId; // line 1 (results like 1,2,3,4,5,6)
-      anotherTable.child('userdetails').child(userId).once('value', function(mediaSnap) {
-          console.log(userId + ":" + mediaSnap.val().name);
-      });
-  });
-  }
-
-tableOne.orderByKey().on("value", function (snapshot) {
-    //console.log(snapshot.val());
-    snapshot.forEach(function (data) {
-        tableTwo.once('value').then(function (info) {
-            info = info.val();
-        });
-    });
-});
-   */
-
-
-  deleteRequest(id:string): void {
-    this.RequestCollection.doc(id).delete()
-    .catch(error => {console.log("deleteRequest error: "+error)})
-    .then(() => console.log("deleteRequested: id = "+id));
-  }
 }
 

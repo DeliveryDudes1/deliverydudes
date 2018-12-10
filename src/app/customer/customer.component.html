@@ -7,16 +7,15 @@
     <div class="profile-avatar">
       <div class="inner"></div>
     </div>
-    <h1>{{ customers[0].name }}</h1>
+    <div class="meta" *ngFor="let c of customers" >
+    <h1>{{ c.name }}</h1>
     <h2>Customer</h2>
-    <div class="meta">
       <p><i class="fa fa-fw fa-map-marker"></i> Ireland</p>
-      <p><i class="far fa-envelope"></i> {{ customers[0].email }}</p>
+      <p><i class="far fa-envelope"></i> {{ c.email }}</p>
       <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
     </div>
   </section>
   <section class="section center-col content">
-    
     <!-- Nav -->
     <nav class="profile-nav">
       <ul>
@@ -29,7 +28,7 @@
     
     <!-- Wil hyped X-->
     <div class="unit user-hyped">
-      <h3>Some text here</h3>
+      <h3>  </h3>
       
     </div>   
   </section>

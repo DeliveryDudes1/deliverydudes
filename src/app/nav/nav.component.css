@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #deliveryDudes{
 font-family: AR Berkley;
 font-size: 30px;
@@ -8,4 +9,9 @@ margin-right: 30%; */
 
 #register{
     margin-right: 5%;
+=======
+.color{
+    background-color:  #ccc;
+    border-radius: 0.5ch;
+>>>>>>> 08111561d4b973c9e3705354be26c9151218fc56
 }

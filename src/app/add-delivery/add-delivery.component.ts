@@ -8,6 +8,7 @@ import { IDriver } from '../driver';
 import { AuthService } from '../service/auth.service';
 import {MatSnackBar} from '@angular/material';
 import { FormBuilder, Validators } from '@angular/forms';
+import { DeliveryService } from '../shared/delivery.service';
 
 
 @Component({
@@ -39,10 +40,11 @@ export class AddDeliveryComponent implements OnInit {
   dudes: IDriver[] ;
   form;
 
-  constructor( private _deliveryService: CustomerService,
+  constructor( private _CustomerService: CustomerService,
     private _distanceMatric : GmapsdistanceService, 
     private _driverService: DriverService,
     private _auth: AuthService,
+    private _deliveryService :DeliveryService,
     public snackBar: MatSnackBar,
     private fb: FormBuilder) { 
       this.form = fb.group({
@@ -75,10 +77,10 @@ export class AddDeliveryComponent implements OnInit {
     driverID: 1,
     customerID: 1,
     ID: 1,
-    email: this.ADcustEmail // send to Firabase.
+    email: this.ADcustEmail // send to Firabase as sorting referance.
 
   };
-
+  // Sends delivery data to firebase.
   this._deliveryService.addDelivery(request);
   console.log(this.description);
   this.OpenSnackBar("Delivery request made")
