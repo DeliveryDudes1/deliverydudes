@@ -28,7 +28,7 @@ getDrivers() : Observable<IDriver[]> {
   this.drivers = this.driversCollection.snapshotChanges().pipe(
     map(actions => actions.map(a => {
       const data = a.payload.doc.data() as IDriver;
-      console.log("Drivers : data " + JSON.stringify(data));
+      //console.log("Drivers : data " + JSON.stringify(data));
       const id = a.payload.doc.id;
       return { id, ...data };
     }))

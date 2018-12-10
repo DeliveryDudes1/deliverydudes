@@ -25,7 +25,7 @@ export class DeliveryListComponent implements OnInit {
   ngOnInit() {
       this.sortingEmail = this._auth.getCutomerEmail();
 
-      this._deliveryService.getProducts().subscribe(deliveries => {
+      this._deliveryService.getDelivery().subscribe(deliveries => {
       this.deliveries = deliveries.filter(d => d.email == this.sortingEmail),// filter by customer email,
       this.filterDeliveries = deliveries.filter(d => d.email == this.sortingEmail),
         console.log("list email --" , this.sortingEmail)
@@ -67,10 +67,8 @@ openDialog(driverID : number): void {
 
   dialogRef.afterClosed().subscribe(result => {
     console.log('The dialog was closed');
-    //this.animal = result;
   });
 
-  console.log(driverID);
 }
 
 }

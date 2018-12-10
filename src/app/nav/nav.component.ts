@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../service/auth.service';
 import {Router} from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
-// =============== COMMENTED OUT ARE AUTH FEATURES ))))))))))))))))))))))))))
+/// =============== COMMENTED OUT ARE AUTH FEATURES =========================== /// 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
