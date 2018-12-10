@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { IDriver } from '../driver';
 import { DriverService } from '../shared/driver.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-diver',
@@ -23,21 +24,31 @@ export class DiverComponent implements OnInit {
   ngOnInit() {
     console.log(this.driver_ID);
     this._Driver.getDrivers().subscribe(data => {
-      this.driverData = data
+      this.driverData = data;
+      this.drivers = this.getDriverData();
+
     });
 
-    this.drivers = this.getDriverData();
   }
   //trying to filter drivers array but not working.
-  getDriverData() : IDriver[] {
 
 
-  //this.driverData.filter((driver : IDriver) => driver.driverID == this.driver_ID),
 
-  this._Driver.getDrivers().subscribe( d =>{
-    this.driverData = this.driverData.filter(d => d.driverID == this.driver_ID)
-  })
-  console.log("drivers id --",this.driver_ID);
-  return this.driverData;
+  //trying to filter drivers array but not working.
+  getDriverData() : IDriver[]{
+      let x: number = this.driver_ID;
+  
+     let obj: IDriver[] = this.driverData.filter(function(node) {
+          return node.driverID==x;
+      });
+  
+      return obj;   
   }
+
+    // console.log("1: Driver: ",JSON.stringify( this.driverData));
+    //     console.log(this.driver_ID);
+
+    //  return this.driverData.filter((driver : IDriver) => {console.log("2: Driver: ",JSON.stringify(driver)),driver.driverID == this.driver_ID});
+    // console.log(this.driver_ID);
+  // }
 }
