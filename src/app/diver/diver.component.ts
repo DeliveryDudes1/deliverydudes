@@ -31,10 +31,9 @@ export class DiverComponent implements OnInit {
 
   }
   //trying to filter drivers array but not working.
-  getDriverData() : IDriver[] {
 
 
-<<<<<<< HEAD
+
   //trying to filter drivers array but not working.
   getDriverData() : IDriver[]{
       let x: number = this.driver_ID;
@@ -44,15 +43,6 @@ export class DiverComponent implements OnInit {
       });
   
       return obj;   
-=======
-  //this.driverData.filter((driver : IDriver) => driver.driverID == this.driver_ID),
-
-  this._Driver.getDrivers().subscribe( d =>{
-    this.driverData = this.driverData.filter(d => d.driverID == this.driver_ID)
-  })
-  console.log("drivers id --",this.driver_ID);
-  return this.driverData;
->>>>>>> a10304414ce39fcfa6bceb00486e1a95770ddcf6
   }
 
     // console.log("1: Driver: ",JSON.stringify( this.driverData));
